@@ -1,0 +1,11 @@
+{
+  "name": "williamson-real-estate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "dfx start --background",
+    "deploy:local": "dfx deploy",
+    "deploy": "dfx deploy --network ic",
+    "stop": "dfx stop"
+  }
+}

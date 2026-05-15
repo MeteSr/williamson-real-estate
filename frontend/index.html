@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sell your home in Volusia County for a flat fee — not a percentage. Williamson Real Estate serves Daytona Beach, Pelican Bay, and all of Volusia County, FL." />
+  <title>Williamson Real Estate — Flat-Fee Brokerage | Volusia County, FL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────────────── -->
+  <nav id="nav">
+    <span class="nav-wordmark">WILLIAMSON<br>REAL ESTATE</span>
+    <div class="nav-links">
+      <a href="#savings">Savings</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#neighborhood">Pelican Bay</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+  <header id="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Volusia County, FL · Daytona Beach · Pelican Bay</p>
+      <h1>Sell your home.<br>Keep the commission.</h1>
+      <p class="hero-sub">
+        Most brokers take 4–6% of your sale price. We charge a simple flat fee —
+        so you keep thousands more at closing.
+      </p>
+      <div class="hero-actions">
+        <a href="#savings" class="btn-primary">See your savings</a>
+        <a href="#contact" class="btn-ghost">Talk to us</a>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </header>
+
+  <!-- ── SAVINGS CALCULATOR ────────────────────────────────────────────────── -->
+  <section id="savings">
+    <div class="section-inner">
+      <p class="section-label">Savings Calculator</p>
+      <h2>How much will you save?</h2>
+      <p class="section-sub">Enter your asking price and see the difference instantly.</p>
+
+      <div class="calc-wrap">
+        <div class="calc-input-row">
+          <label for="price-input" class="calc-label">Your asking price</label>
+          <div class="price-input-wrap">
+            <span class="dollar-sign">$</span>
+            <input
+              id="price-input"
+              type="text"
+              inputmode="numeric"
+              placeholder="350,000"
+              autocomplete="off"
+            />
+          </div>
+          <input
+            id="price-slider"
+            type="range"
+            min="100000"
+            max="1000000"
+            step="5000"
+            value="350000"
+          />
+          <div class="slider-labels">
+            <span>$100k</span><span>$1M</span>
+          </div>
+        </div>
+
+        <div class="calc-results" id="calc-results">
+          <div class="result-card result-ours">
+            <p class="result-label">Williamson Flat Fee</p>
+            <p class="result-amount" id="our-fee">$8,000</p>
+          </div>
+          <div class="result-divider">vs.</div>
+          <div class="result-card result-theirs">
+            <p class="result-label">Typical 5% Agent</p>
+            <p class="result-amount" id="typical-fee">$17,500</p>
+          </div>
+        </div>
+
+        <div class="calc-savings-banner" id="savings-banner">
+          You keep an extra <strong id="savings-amount">$9,500</strong>
+          <span id="savings-pct">(54% less in fees)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING TABLE ─────────────────────────────────────────────────────── -->
+  <section id="pricing" class="section-alt">
+    <div class="section-inner">
+      <p class="section-label">Fee Schedule</p>
+      <h2>Flat fee. No surprises.</h2>
+      <p class="section-sub">One straightforward number — whatever your home sells for.</p>
+
+      <div class="table-wrap">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Sale Price Range</th>
+              <th class="col-ours">Williamson Flat Fee</th>
+              <th>Typical 5%</th>
+              <th>You Save</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>$200,000 – $299,999</td>
+              <td class="col-ours">$6,000</td>
+              <td>$10,000 – $15,000</td>
+              <td class="col-save">up to <strong>$9,000</strong></td>
+            </tr>
+            <tr>
+              <td>$300,000 – $399,999</td>
+              <td class="col-ours">$8,000</td>
+              <td>$15,000 – $20,000</td>
+              <td class="col-save">up to <strong>$12,000</strong></td>
+            </tr>
+            <tr>
+              <td>$400,000 – $499,999</td>
+              <td class="col-ours">$10,000</td>
+              <td>$20,000 – $25,000</td>
+              <td class="col-save">up to <strong>$15,000</strong></td>
+            </tr>
+            <tr>
+              <td>$500,000 – $599,999</td>
+              <td class="col-ours">$12,000</td>
+              <td>$25,000 – $30,000</td>
+              <td class="col-save">up to <strong>$18,000</strong></td>
+            </tr>
+            <tr>
+              <td>$600,000+</td>
+              <td class="col-ours">$14,000</td>
+              <td>$30,000+</td>
+              <td class="col-save">up to <strong>$16,000+</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">* Typical commission = 5% of sale price. Buyer's agent compensation negotiated separately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEIGHBORHOOD ───────────────────────────────────────────────────────── -->
+  <section id="neighborhood">
+    <div class="section-inner">
+      <p class="section-label">Local Expertise</p>
+      <h2>We know Pelican Bay.</h2>
+      <p class="section-sub">
+        Pelican Bay is one of Volusia County's premier gated communities — Intracoastal
+        access, golf, and a tight-knit neighborhood that rewards an agent who actually
+        lives here.
+      </p>
+
+      <div class="hood-grid">
+        <div class="hood-card">
+          <p class="hood-stat" id="stat-median">$380k</p>
+          <p class="hood-stat-label">Median Sale Price<br><span class="stat-note">Pelican Bay, 2024</span></p>
+        </div>
+        <div class="hood-card">
+          <p class="hood-stat">42</p>
+          <p class="hood-stat-label">Avg. Days on Market<br><span class="stat-note">Volusia County, 2024</span></p>
+        </div>
+        <div class="hood-card">
+          <p class="hood-stat">98%</p>
+          <p class="hood-stat-label">List-to-Sale Ratio<br><span class="stat-note">Daytona Beach area</span></p>
+        </div>
+      </div>
+
+      <div class="hood-features">
+        <div class="hood-feature">
+          <span class="feature-bullet">—</span>
+          <div>
+            <strong>Gated Community</strong>
+            <p>24-hour security and controlled access — buyers know exactly what they're getting.</p>
+          </div>
+        </div>
+        <div class="hood-feature">
+          <span class="feature-bullet">—</span>
+          <div>
+            <strong>Golf &amp; Intracoastal Access</strong>
+            <p>On-site golf course and direct Intracoastal Waterway access attract a motivated buyer pool.</p>
+          </div>
+        </div>
+        <div class="hood-feature">
+          <span class="feature-bullet">—</span>
+          <div>
+            <strong>Daytona Beach Proximity</strong>
+            <p>Minutes from the beach, I-95, and Daytona's shopping and dining — a proven selling point.</p>
+          </div>
+        </div>
+        <div class="hood-feature">
+          <span class="feature-bullet">—</span>
+          <div>
+            <strong>Neighborhood Insider</strong>
+            <p>We live and work in Pelican Bay. That local knowledge closes deals faster.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ──────────────────────────────────────────────────────────────── -->
+  <section id="why" class="section-alt">
+    <div class="section-inner">
+      <p class="section-label">Why Williamson</p>
+      <h2>Full service. Flat fee.</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <p class="why-icon">01</p>
+          <strong>MLS Listing</strong>
+          <p>Your home listed on the MLS, Zillow, Realtor.com, and every major portal — maximum exposure.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-icon">02</p>
+          <strong>Professional Photos</strong>
+          <p>High-quality photography included. First impressions sell homes.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-icon">03</p>
+          <strong>Negotiation</strong>
+          <p>Experienced representation through every offer, counter, and inspection negotiation.</p>
+        </div>
+        <div class="why-card">
+          <p class="why-icon">04</p>
+          <strong>Closing Support</strong>
+          <p>We walk you through every step from contract to keys — no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <div class="contact-copy">
+        <p class="section-label">Get Started</p>
+        <h2>Ready to list?</h2>
+        <p>
+          Tell us about your property and we'll reach out within one business day
+          to talk through the process, answer questions, and get your home on the market.
+        </p>
+        <p class="contact-detail"><strong>Williamson Real Estate</strong><br>
+          Volusia County, FL<br>
+          Serving Pelican Bay · Daytona Beach · Port Orange · Ormond Beach
+        </p>
+      </div>
+
+      <form id="lead-form" class="lead-form" novalidate>
+        <div class="form-row">
+          <label for="f-name">Full Name <span class="req">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required />
+          <span class="field-error" id="err-name"></span>
+        </div>
+        <div class="form-row form-row-half">
+          <div>
+            <label for="f-phone">Phone <span class="req">*</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" required />
+            <span class="field-error" id="err-phone"></span>
+          </div>
+          <div>
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+            <span class="field-error" id="err-email"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="f-address">Property Address <span class="req">*</span></label>
+          <input id="f-address" name="address" type="text" placeholder="123 Pelican Way, Daytona Beach, FL" required />
+          <span class="field-error" id="err-address"></span>
+        </div>
+        <div class="form-row">
+          <label for="f-price">Estimated Sale Price <span class="opt">(optional)</span></label>
+          <div class="price-input-wrap">
+            <span class="dollar-sign">$</span>
+            <input id="f-price" name="estimatedPrice" type="text" inputmode="numeric" placeholder="350,000" />
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="f-message">Anything else? <span class="opt">(optional)</span></label>
+          <textarea id="f-message" name="message" rows="3" placeholder="Timeline, questions, anything on your mind…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full" id="submit-btn">Send My Info</button>
+        <p class="form-note">We'll never share your information. No spam, ever.</p>
+      </form>
+
+      <div id="form-success" class="form-success" hidden>
+        <p class="success-icon">✓</p>
+        <h3>Got it — we'll be in touch.</h3>
+        <p>Expect a call or email within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <span class="nav-wordmark">WILLIAMSON<br>REAL ESTATE</span>
+      <p>Licensed Real Estate Broker · Volusia County, FL</p>
+      <p class="footer-small">© 2025 Williamson Real Estate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
