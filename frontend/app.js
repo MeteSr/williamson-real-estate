@@ -140,8 +140,6 @@ contactForm.addEventListener("submit", async (e) => {
   const phone   = contactForm.querySelector("#f-phone").value.trim();
   const email   = contactForm.querySelector("#f-email").value.trim();
   const address = contactForm.querySelector("#f-address").value.trim();
-  const priceRaw= contactForm.querySelector("#f-price").value.replace(/\D/g, "");
-  const price   = priceRaw ? parseInt(priceRaw, 10) : null;
   const message = contactForm.querySelector("#f-message").value.trim() || null;
 
   let valid = true;
@@ -156,7 +154,7 @@ contactForm.addEventListener("submit", async (e) => {
   contactBtn.textContent = "Sending…";
 
   try {
-    await submitLead({ name, phone, email, address, estimatedPrice: price, message, source: "contact" });
+    await submitLead({ name, phone, email, address, message, source: "contact" });
     contactForm.hidden    = true;
     contactSuccess.hidden = false;
   } catch (err) {
