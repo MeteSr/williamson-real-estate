@@ -360,7 +360,6 @@ blockquote { font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   padding: 2rem var(--pad);
   max-width: 100%;
 }
-.cta-strip-icon { font-size: 2rem; flex-shrink: 0; }
 .cta-strip-text { flex: 1; }
 .cta-strip-text strong { display: block; font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
 .cta-strip-text p { font-size: 0.9375rem; color: var(--text-muted); }
