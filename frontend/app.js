@@ -168,6 +168,16 @@ valuationForm.addEventListener("submit", async (e) => {
   }
 });
 
+/* ── Mobile nav toggle ───────────────────────────────────────────────────── */
+const navBurger  = document.getElementById("nav-burger");
+const navLinksEl = document.querySelector(".nav-links");
+if (navBurger && navLinksEl) {
+  navBurger.addEventListener("click", () => navLinksEl.classList.toggle("open"));
+  navLinksEl.querySelectorAll("a").forEach(a =>
+    a.addEventListener("click", () => navLinksEl.classList.remove("open"))
+  );
+}
+
 /* ── Smooth scroll ───────────────────────────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", (e) => {

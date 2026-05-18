@@ -478,11 +478,26 @@ footer { background: var(--dark); color: var(--white); border-top: 3px solid var
   .listings-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
 }
 @media (max-width: 640px) {
+  #nav { flex-wrap: wrap; }
   .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.75rem 0 1.25rem;
+    border-top: 1px solid var(--border);
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  .nav-links.open a { color: var(--text); font-size: 0.8rem; }
   .nav-burger { display: block; }
+  .section-inner { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .about-grid { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .about-stats { gap: 1rem; }
+  .hero-photo { height: 240px; }
+  .testimonial-text-panel { padding: 2.5rem var(--pad); }
   .form-row-half { grid-template-columns: 1fr; }
   .result-pair { flex-direction: column; }
-  .hood-stats { grid-template-columns: repeat(2, 1fr); }
   .cta-strip { flex-direction: column; text-align: center; }
   .footer-contact { flex-direction: column; gap: 0.4rem; }
 }
