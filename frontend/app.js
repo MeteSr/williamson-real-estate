@@ -1,7 +1,8 @@
-/* ── Savings Calculator ─────────────────────────────────────────────────── */
-
-const LEADS_CANISTER_ID = ""; // filled in after `dfx deploy --network ic`
+/* ── Config ──────────────────────────────────────────────────────────────── */
+const LEADS_CANISTER_ID = ""; // set after `dfx deploy --network ic`
 const TRADITIONAL_RATE  = 0.05;
+
+/* ── Savings Calculator ─────────────────────────────────────────────────── */
 
 function flatFee(price) {
   if (price < 300000) return 6000;
@@ -11,14 +12,13 @@ function flatFee(price) {
   return 14000;
 }
 
-function fmt(n) {
+function fmtDollars(n) {
   return "$" + Math.round(n).toLocaleString("en-US");
 }
 
 function fmtInput(raw) {
   const digits = raw.replace(/\D/g, "");
-  if (!digits) return "";
-  return Number(digits).toLocaleString("en-US");
+  return digits ? Number(digits).toLocaleString("en-US") : "";
 }
 
 function updateCalc(price) {
@@ -27,22 +27,18 @@ function updateCalc(price) {
   const saved = their - our;
   const pct   = Math.round((saved / their) * 100);
 
-  document.getElementById("our-fee").textContent     = fmt(our);
-  document.getElementById("typical-fee").textContent = fmt(their);
-  document.getElementById("savings-amount").textContent = fmt(saved);
-  document.getElementById("savings-pct").textContent    = `(${pct}% less in fees)`;
+  document.getElementById("our-fee").textContent      = fmtDollars(our);
+  document.getElementById("typical-fee").textContent  = fmtDollars(their);
+  document.getElementById("savings-amount").textContent = fmtDollars(saved);
+  document.getElementById("savings-pct").textContent    = `— ${pct}% less in fees`;
 }
 
 const priceInput  = document.getElementById("price-input");
 const priceSlider = document.getElementById("price-slider");
 
-function getNumericPrice(raw) {
-  return parseInt(raw.replace(/\D/g, ""), 10) || 0;
-}
-
 priceInput.addEventListener("input", () => {
-  const raw  = priceInput.value;
-  const num  = getNumericPrice(raw);
+  const raw = priceInput.value;
+  const num = parseInt(raw.replace(/\D/g, ""), 10) || 0;
   priceInput.value = fmtInput(raw);
   if (num >= 100000 && num <= 1000000) priceSlider.value = num;
   if (num > 0) updateCalc(num);
@@ -54,109 +50,173 @@ priceSlider.addEventListener("input", () => {
   updateCalc(num);
 });
 
-// Initialize at default value (350k)
 updateCalc(350000);
 
-/* ── Contact Form ───────────────────────────────────────────────────────── */
+/* ── Testimonial Carousel ───────────────────────────────────────────────── */
 
-const form       = document.getElementById("lead-form");
-const successBox = document.getElementById("form-success");
-const submitBtn  = document.getElementById("submit-btn");
+const TESTIMONIALS = [
+  {
+    quote: "We saved over $11,000 compared to what we would have paid a traditional agent. The entire process was smooth, professional, and I always had direct access to my broker. I tell every neighbor in Pelican Bay — call Williamson first.",
+    attr:  "— J. & M. T., Pelican Bay"
+  },
+  {
+    quote: "As a Pelican Bay homeowner, I was skeptical a flat-fee broker could deliver full service. I was wrong. Our home sold in three weeks above asking price, and we kept every dollar of the savings.",
+    attr:  "— R. & S. K., Daytona Beach"
+  },
+  {
+    quote: "The savings calculator on the website sold me before I even called. The actual experience was even better — honest, straightforward, and no surprises. This is how real estate should work.",
+    attr:  "— D. W., Ormond Beach"
+  }
+];
 
-function showError(id, msg) {
-  const el = document.getElementById("err-" + id);
+let currentTestimonial = 0;
+const textEl  = document.getElementById("testimonial-text");
+const attrEl  = document.getElementById("testimonial-attr");
+const dots    = document.querySelectorAll(".dot");
+
+function showTestimonial(idx) {
+  currentTestimonial = idx;
+  textEl.textContent = TESTIMONIALS[idx].quote;
+  attrEl.innerHTML   = TESTIMONIALS[idx].attr;
+  dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+}
+
+dots.forEach(dot => {
+  dot.addEventListener("click", () => showTestimonial(parseInt(dot.dataset.idx, 10)));
+});
+
+// Auto-advance every 7 seconds
+setInterval(() => {
+  showTestimonial((currentTestimonial + 1) % TESTIMONIALS.length);
+}, 7000);
+
+/* ── Form helpers ────────────────────────────────────────────────────────── */
+
+function showError(prefix, id, msg) {
+  const el = document.getElementById(prefix + id);
   if (el) el.textContent = msg;
 }
-function clearErrors() {
-  ["name", "phone", "email", "address"].forEach(id => showError(id, ""));
+function clearErrors(prefix, fields) {
+  fields.forEach(id => showError(prefix, id, ""));
 }
-
-function validateEmail(v) {
+function isValidEmail(v) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  clearErrors();
+async function submitLead(payload) {
+  if (LEADS_CANISTER_ID) {
+    // Replace with @dfinity/agent call once canister ID is known
+    await callLeadsCanister(payload);
+  } else {
+    // Mailto fallback — opens mail client with lead data pre-filled
+    const lines = [
+      `Name: ${payload.name}`,
+      `Phone: ${payload.phone}`,
+      `Email: ${payload.email}`,
+      `Address: ${payload.address}`,
+      payload.estimatedPrice ? `Estimated Price: $${payload.estimatedPrice.toLocaleString()}` : null,
+      payload.timeline       ? `Timeline: ${payload.timeline}` : null,
+      payload.message        ? `Message: ${payload.message}` : null,
+      payload.source         ? `Source: ${payload.source}` : null,
+    ].filter(Boolean).join("\n");
 
-  const name    = form.name.value.trim();
-  const phone   = form.phone.value.trim();
-  const email   = form.email.value.trim();
-  const address = form.address.value.trim();
-  const priceRaw= document.getElementById("f-price").value.replace(/\D/g, "");
+    const subject = encodeURIComponent(`New Lead — ${payload.name}`);
+    const body    = encodeURIComponent(lines);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  }
+}
+
+/* ── Contact Form ────────────────────────────────────────────────────────── */
+
+const contactForm    = document.getElementById("lead-form");
+const contactSuccess = document.getElementById("form-success");
+const contactBtn     = document.getElementById("submit-btn");
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  clearErrors("err-", ["name", "phone", "email", "address"]);
+
+  const name    = contactForm.querySelector("#f-name").value.trim();
+  const phone   = contactForm.querySelector("#f-phone").value.trim();
+  const email   = contactForm.querySelector("#f-email").value.trim();
+  const address = contactForm.querySelector("#f-address").value.trim();
+  const priceRaw= contactForm.querySelector("#f-price").value.replace(/\D/g, "");
   const price   = priceRaw ? parseInt(priceRaw, 10) : null;
-  const message = document.getElementById("f-message").value.trim() || null;
+  const message = contactForm.querySelector("#f-message").value.trim() || null;
 
   let valid = true;
-  if (!name)            { showError("name",    "Name is required");              valid = false; }
-  if (!phone)           { showError("phone",   "Phone is required");             valid = false; }
-  if (!email)           { showError("email",   "Email is required");             valid = false; }
-  else if (!validateEmail(email)) { showError("email", "Enter a valid email address"); valid = false; }
-  if (!address)         { showError("address", "Property address is required");  valid = false; }
+  if (!name)               { showError("err-", "name",    "Name is required");                    valid = false; }
+  if (!phone)              { showError("err-", "phone",   "Phone is required");                   valid = false; }
+  if (!email)              { showError("err-", "email",   "Email is required");                   valid = false; }
+  else if (!isValidEmail(email)) { showError("err-", "email", "Enter a valid email address");     valid = false; }
+  if (!address)            { showError("err-", "address", "Property address is required");        valid = false; }
   if (!valid) return;
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Sending…";
+  contactBtn.disabled    = true;
+  contactBtn.textContent = "Sending…";
 
   try {
-    if (LEADS_CANISTER_ID) {
-      // ICP canister call — requires @dfinity/agent loaded from CDN or bundled
-      await callLeadsCanister({ name, phone, email, address, estimatedPrice: price, message });
-    } else {
-      // Fallback: mailto (works without a deployed canister)
-      const body = [
-        `Name: ${name}`,
-        `Phone: ${phone}`,
-        `Email: ${email}`,
-        `Address: ${address}`,
-        price   ? `Estimated Price: $${price.toLocaleString()}` : null,
-        message ? `Message: ${message}` : null,
-      ].filter(Boolean).join("\n");
-      window.location.href = `mailto:?subject=New%20Listing%20Lead%20-%20${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
-    }
-
-    form.hidden = true;
-    successBox.hidden = false;
+    await submitLead({ name, phone, email, address, estimatedPrice: price, message, source: "contact" });
+    contactForm.hidden    = true;
+    contactSuccess.hidden = false;
   } catch (err) {
-    console.error("Lead submission failed:", err);
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Send My Info";
-    showError("name", "Something went wrong — please try again or call us directly.");
+    console.error("Contact form submission failed:", err);
+    contactBtn.disabled    = false;
+    contactBtn.textContent = "Send My Info";
+    showError("err-", "name", "Something went wrong — please try again or call us directly.");
   }
 });
 
-/* ── ICP Canister Call ───────────────────────────────────────────────────
-   Calls the `submitLead` method on the leads canister via the IC HTTP API.
-   Only active when LEADS_CANISTER_ID is set after deployment.
-────────────────────────────────────────────────────────────────────────── */
-async function callLeadsCanister({ name, phone, email, address, estimatedPrice, message }) {
-  // Encode arguments as Candid using the IC management API endpoint
-  // For simplicity, use fetch against the IC replica's /api/v3/canister endpoint
-  // A production deployment should import @dfinity/agent + candid IDL.
-  // This is a placeholder that will be replaced once canister ID is known.
-  const res = await fetch(
-    `https://ic0.app/api/v3/canister/${LEADS_CANISTER_ID}/call`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/cbor" },
-      body: encodeLead({ name, phone, email, address, estimatedPrice, message }),
-    }
-  );
-  if (!res.ok) throw new Error(`Canister call failed: ${res.status}`);
-}
+/* ── Valuation Form ──────────────────────────────────────────────────────── */
 
-// Stub — replaced by @dfinity/agent Candid encoding once canister ID is known
-function encodeLead(_lead) {
-  return new Uint8Array();
-}
+const valuationForm    = document.getElementById("valuation-form");
+const valuationSuccess = document.getElementById("valuation-success");
+const valuationBtn     = document.getElementById("val-submit-btn");
 
-/* ── Smooth-scroll nav on mobile ─────────────────────────────────────── */
+valuationForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  clearErrors("verr-", ["address", "name", "phone", "email"]);
+
+  const address  = valuationForm.querySelector("#v-address").value.trim();
+  const name     = valuationForm.querySelector("#v-name").value.trim();
+  const phone    = valuationForm.querySelector("#v-phone").value.trim();
+  const email    = valuationForm.querySelector("#v-email").value.trim();
+  const timeline = valuationForm.querySelector("#v-timeline").value || null;
+
+  let valid = true;
+  if (!address)            { showError("verr-", "address", "Property address is required");       valid = false; }
+  if (!name)               { showError("verr-", "name",    "Name is required");                   valid = false; }
+  if (!phone)              { showError("verr-", "phone",   "Phone is required");                  valid = false; }
+  if (!email)              { showError("verr-", "email",   "Email is required");                  valid = false; }
+  else if (!isValidEmail(email)) { showError("verr-", "email", "Enter a valid email address");    valid = false; }
+  if (!valid) return;
+
+  valuationBtn.disabled    = true;
+  valuationBtn.textContent = "Sending…";
+
+  try {
+    await submitLead({ name, phone, email, address, timeline, source: "valuation" });
+    valuationForm.hidden    = true;
+    valuationSuccess.hidden = false;
+  } catch (err) {
+    console.error("Valuation form submission failed:", err);
+    valuationBtn.disabled    = false;
+    valuationBtn.textContent = "Request My Free Valuation";
+    showError("verr-", "name", "Something went wrong — please try again.");
+  }
+});
+
+/* ── Smooth scroll ───────────────────────────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", (e) => {
     const target = document.querySelector(link.getAttribute("href"));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
   });
 });
+
+/* ── ICP Canister stub ──────────────────────────────────────────────────────
+   Replace with @dfinity/agent + Candid IDL once LEADS_CANISTER_ID is set.
+────────────────────────────────────────────────────────────────────────── */
+async function callLeadsCanister(_payload) {
+  throw new Error("LEADS_CANISTER_ID not configured");
+}
