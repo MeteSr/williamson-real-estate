@@ -52,44 +52,6 @@ priceSlider.addEventListener("input", () => {
 
 updateCalc(350000);
 
-/* ── Testimonial Carousel ───────────────────────────────────────────────── */
-
-const TESTIMONIALS = [
-  {
-    quote: "We saved over $11,000 compared to what we would have paid a traditional agent. The entire process was smooth, professional, and I always had direct access to my broker. I tell every neighbor in Pelican Bay — call Williamson first.",
-    attr:  "— J. & M. T., Pelican Bay"
-  },
-  {
-    quote: "As a Pelican Bay homeowner, I was skeptical a flat-fee broker could deliver full service. I was wrong. Our home sold in three weeks above asking price, and we kept every dollar of the savings.",
-    attr:  "— R. & S. K., Daytona Beach"
-  },
-  {
-    quote: "The savings calculator on the website sold me before I even called. The actual experience was even better — honest, straightforward, and no surprises. This is how real estate should work.",
-    attr:  "— D. W., Ormond Beach"
-  }
-];
-
-let currentTestimonial = 0;
-const textEl  = document.getElementById("testimonial-text");
-const attrEl  = document.getElementById("testimonial-attr");
-const dots    = document.querySelectorAll(".dot");
-
-function showTestimonial(idx) {
-  currentTestimonial = idx;
-  textEl.textContent = TESTIMONIALS[idx].quote;
-  attrEl.innerHTML   = TESTIMONIALS[idx].attr;
-  dots.forEach((d, i) => d.classList.toggle("active", i === idx));
-}
-
-dots.forEach(dot => {
-  dot.addEventListener("click", () => showTestimonial(parseInt(dot.dataset.idx, 10)));
-});
-
-// Auto-advance every 7 seconds
-setInterval(() => {
-  showTestimonial((currentTestimonial + 1) % TESTIMONIALS.length);
-}, 7000);
-
 /* ── Form helpers ────────────────────────────────────────────────────────── */
 
 function showError(prefix, id, msg) {
