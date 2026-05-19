@@ -463,6 +463,98 @@ footer { background: var(--dark); color: var(--white); border-top: 3px solid var
 .footer-contact span { font-size: 0.85rem; color: #A09890; }
 .footer-legal { font-size: 0.72rem; color: #5A524A; font-family: var(--mono); letter-spacing: 0.04em; margin-top: 0.5rem; }
 
+/* ── HomeGentic Promo ────────────────────────────────────────────────────── */
+.hg-section {
+  background: var(--dark);
+  border-top: 3px solid var(--gold);
+}
+.hg-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 5rem var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.hg-heading {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+.hg-heading em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hg-lead {
+  color: #A09080;
+  margin-bottom: 2rem;
+  max-width: 48ch;
+}
+.hg-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.hg-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.hg-dash {
+  font-family: var(--mono);
+  color: var(--gold);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+.hg-list strong {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--white);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.hg-list p {
+  font-size: 0.88rem;
+  color: #7A6E66;
+  line-height: 1.65;
+}
+.hg-cta {
+  display: inline-block;
+}
+
+.hg-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-self: center;
+}
+.hg-card {
+  background: #251F1C;
+  border: 1px solid #3A322E;
+  padding: 1.5rem;
+}
+.hg-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.hg-card-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.hg-card-desc {
+  font-size: 0.85rem;
+  color: #7A6E66;
+  line-height: 1.6;
+}
+
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .testimonial-split { grid-template-columns: 1fr; }
@@ -500,4 +592,6 @@ footer { background: var(--dark); color: var(--white); border-top: 3px solid var
   .result-pair { flex-direction: column; }
   .cta-strip { flex-direction: column; text-align: center; }
   .footer-contact { flex-direction: column; gap: 0.4rem; }
+  .hg-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hg-card-grid { grid-template-columns: 1fr 1fr; }
 }
