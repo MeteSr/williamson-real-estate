@@ -1,0 +1,6 @@
+[package]
+name = "williamson-real-estate"
+version = "0.1.0"
+
+[dependencies]
+base = "0.11.1"

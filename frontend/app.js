@@ -2,6 +2,23 @@
 const LEADS_CANISTER_ID = ""; // set after `dfx deploy --network ic`
 const TRADITIONAL_RATE  = 0.05;
 
+/* ── UTM Tracking ────────────────────────────────────────────────────────── */
+// Reads ?utm_source=facebook&utm_medium=social&utm_campaign=pelican-bay from
+// the landing URL so every lead submission carries its traffic source.
+//
+// Example URLs per channel:
+//   Facebook/Instagram : ?utm_source=facebook&utm_medium=social&utm_campaign=pelican-bay-valuation
+//   Google Ads         : ?utm_source=google&utm_medium=cpc&utm_campaign=flat-fee-daytona
+//   Nextdoor           : ?utm_source=nextdoor&utm_medium=social&utm_campaign=pelican-bay-neighbors
+//   Direct Mail (EDDM) : ?utm_source=eddm&utm_medium=direct_mail&utm_campaign=pelican-bay-q1-2025
+
+const _utmParams = new URLSearchParams(window.location.search);
+const UTM = {
+  source:   _utmParams.get("utm_source")   || null,
+  medium:   _utmParams.get("utm_medium")   || null,
+  campaign: _utmParams.get("utm_campaign") || null,
+};
+
 /* ── Savings Calculator ─────────────────────────────────────────────────── */
 
 function flatFee(price) {
@@ -80,6 +97,9 @@ async function submitLead(payload) {
       payload.timeline       ? `Timeline: ${payload.timeline}` : null,
       payload.message        ? `Message: ${payload.message}` : null,
       payload.source         ? `Source: ${payload.source}` : null,
+      payload.utmSource      ? `UTM Source: ${payload.utmSource}` : null,
+      payload.utmMedium      ? `UTM Medium: ${payload.utmMedium}` : null,
+      payload.utmCampaign    ? `UTM Campaign: ${payload.utmCampaign}` : null,
     ].filter(Boolean).join("\n");
 
     const subject = encodeURIComponent(`New Lead — ${payload.name}`);
@@ -118,7 +138,11 @@ contactForm.addEventListener("submit", async (e) => {
   contactBtn.textContent = "Sending…";
 
   try {
-    await submitLead({ name, phone, email, address, estimatedPrice: price, message, source: "contact" });
+    await submitLead({
+      name, phone, email, address, estimatedPrice: price, message,
+      source: "contact",
+      utmSource: UTM.source, utmMedium: UTM.medium, utmCampaign: UTM.campaign,
+    });
     contactForm.hidden    = true;
     contactSuccess.hidden = false;
   } catch (err) {
@@ -157,13 +181,17 @@ valuationForm.addEventListener("submit", async (e) => {
   valuationBtn.textContent = "Sending…";
 
   try {
-    await submitLead({ name, phone, email, address, timeline, source: "valuation" });
+    await submitLead({
+      name, phone, email, address, timeline,
+      source: "valuation",
+      utmSource: UTM.source, utmMedium: UTM.medium, utmCampaign: UTM.campaign,
+    });
     valuationForm.hidden    = true;
     valuationSuccess.hidden = false;
   } catch (err) {
     console.error("Valuation form submission failed:", err);
     valuationBtn.disabled    = false;
-    valuationBtn.textContent = "Request My Free Valuation";
+    valuationBtn.textContent = "Get My Free Valuation";
     showError("verr-", "name", "Something went wrong — please try again.");
   }
 });

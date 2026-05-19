@@ -13,6 +13,9 @@ persistent actor Leads {
     address       : Text;
     estimatedPrice : ?Nat;
     message       : ?Text;
+    utmSource     : ?Text;
+    utmMedium     : ?Text;
+    utmCampaign   : ?Text;
     submittedAt   : Int;
   };
 
@@ -25,7 +28,10 @@ persistent actor Leads {
     email         : Text,
     address       : Text,
     estimatedPrice : ?Nat,
-    message       : ?Text
+    message       : ?Text,
+    utmSource     : ?Text,
+    utmMedium     : ?Text,
+    utmCampaign   : ?Text
   ) : async Result.Result<(), Text> {
     if (Text.size(name)    == 0) return #err("name is required");
     if (Text.size(phone)   == 0) return #err("phone is required");
@@ -43,6 +49,9 @@ persistent actor Leads {
       address;
       estimatedPrice;
       message;
+      utmSource;
+      utmMedium;
+      utmCampaign;
       submittedAt = Time.now();
     };
     leads := Array.append(leads, [lead]);
