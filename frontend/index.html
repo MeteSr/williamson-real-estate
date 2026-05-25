@@ -3,534 +3,665 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sell your Pelican Bay or Daytona Beach home for a flat fee — not a percentage. Williamson Real Estate, Volusia County FL." />
-  <title>Williamson Real Estate — Flat-Fee Brokerage | Pelican Bay · Daytona Beach</title>
+  <meta name="description" content="Williamson Real Estate — Your Pelican Bay Real Estate Experts. Specializing in buying and selling in Pelican Bay, Daytona Beach's premier gated coastal community." />
+  <title>Williamson Real Estate — Pelican Bay Real Estate Experts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ── NAV ─────────────────────────────────────────────────────────────── -->
-  <nav id="nav">
-    <a href="#" class="nav-logo">
-      <span class="logo-name">WILLIAMSON</span>
-      <span class="logo-sub">REAL ESTATE</span>
-    </a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#savings">Savings</a>
-      <a href="#listings">Listings</a>
-      <a href="#neighborhood">Pelican Bay</a>
-      <a href="#valuation">Valuation</a>
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
+          <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
+          <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
+          <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">WILLIAMSON</span>
+          <span class="logo-sub">REAL ESTATE</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li class="has-dropdown">
+          <a href="#listings">Properties <span class="nav-arrow">&#9660;</span></a>
+        </li>
+        <li class="has-dropdown">
+          <a href="#welcome-pb">Pelican Bay <span class="nav-arrow">&#9660;</span></a>
+        </li>
+        <li class="has-dropdown">
+          <a href="#value-props">Buyers <span class="nav-arrow">&#9660;</span></a>
+        </li>
+        <li class="has-dropdown">
+          <a href="#value-props">Sellers <span class="nav-arrow">&#9660;</span></a>
+        </li>
+        <li class="has-dropdown">
+          <a href="#about">About <span class="nav-arrow">&#9660;</span></a>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Resources <span class="nav-arrow">&#9660;</span></a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="tel:+13865551234" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+          (386) 555-1234
+        </a>
+        <a href="#contact" class="btn-blue">Contact Us</a>
+      </div>
+
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <a href="#contact" class="nav-cta">LET'S TALK</a>
-    <button class="nav-burger" id="nav-burger" aria-label="Menu">&#9776;</button>
   </nav>
 
   <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Pelican Bay · Daytona Beach · Volusia County, FL</p>
-      <h1>Sell Smart.<br><em>Keep $11,000 More.</em></h1>
-      <p class="hero-sub">
-        At the Pelican Bay median, a 5% agent costs you $19,000. Our flat fee is $8,000 —
-        full-service representation from a broker who lives in the neighborhood.
-        You keep the difference.
-      </p>
-      <div class="hero-actions">
-        <a href="#valuation" class="btn-gold">Get My Free Home Valuation</a>
-        <a href="#savings" class="btn-outline">See the Exact Savings</a>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow-blue">Pelican Bay Real Estate Experts</p>
+        <h1>Your Pelican Bay<br>Real Estate Experts.</h1>
+        <p class="hero-tagline">Local. Trusted. Results.</p>
+        <p class="hero-sub">Specializing in buying and selling in Pelican Bay,<br>Daytona Beach's premier gated coastal community.</p>
+        <div class="hero-actions">
+          <a href="#listings" class="btn-blue">View Properties</a>
+          <a href="#welcome-pb" class="btn-outline-dark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#374151"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="white"/></svg>
+            Learn About Pelican Bay
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="hero-photo">
-      <div class="hero-photo-inner">
-        <!-- Replace with your professional headshot -->
-        <div class="photo-placeholder">
-          <span>Add Your<br>Photo Here</span>
+      <div class="hero-image">
+        <!-- Replace src with your Pelican Bay aerial/community photo -->
+        <div class="hero-photo-placeholder">
+          <span>Pelican Bay Photo</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ── ABOUT ─────────────────────────────────────────────────────────────── -->
-  <section id="about">
-    <div class="about-grid">
-      <div class="about-photo">
-        <div class="photo-placeholder photo-placeholder--sm">
-          <span>Broker<br>Photo</span>
+    <div class="hero-search-wrap" hidden>
+      <form class="hero-search" id="property-search">
+        <div class="search-field">
+          <label for="s-type">Property Type</label>
+          <select id="s-type" name="type">
+            <option value="">All Types</option>
+            <option>Single Family</option>
+            <option>Condo</option>
+            <option>Townhouse</option>
+            <option>Lot / Land</option>
+          </select>
         </div>
-      </div>
-      <div class="about-bio">
-        <p class="section-label gold">Meet Your Broker</p>
-        <h2>Real Estate Is More<br>Than a Transaction</h2>
-        <p>
-          I'm a licensed real estate broker and Pelican Bay homeowner. I know these
-          streets, these neighbors, and this market — and I believe sellers deserve
-          more than a cut of their equity handed to a big agency.
-        </p>
-        <p>
-          With Williamson Real Estate you get direct access to your broker from listing
-          day to closing day, honest advice, and a flat fee that keeps more money in
-          your pocket where it belongs.
-        </p>
-        <a href="#contact" class="link-gold">Work With Me &rarr;</a>
-      </div>
-      <div class="about-stats">
-        <div class="stat">
-          <span class="stat-icon">&#8962;</span>
-          <strong class="stat-num" id="stat-homes">50+</strong>
-          <span class="stat-label">Homes Sold</span>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label for="s-min">Min Price</label>
+          <select id="s-min" name="minPrice">
+            <option value="">No Min</option>
+            <option value="500000">$500,000</option>
+            <option value="750000">$750,000</option>
+            <option value="1000000">$1,000,000</option>
+            <option value="1500000">$1,500,000</option>
+          </select>
         </div>
-        <div class="stat">
-          <span class="stat-icon">&#9733;</span>
-          <strong class="stat-num">5&#9733;</strong>
-          <span class="stat-label">Client Rating</span>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label for="s-max">Max Price</label>
+          <select id="s-max" name="maxPrice">
+            <option value="">No Max</option>
+            <option value="1000000">$1,000,000</option>
+            <option value="1500000">$1,500,000</option>
+            <option value="2000000">$2,000,000</option>
+            <option value="3000000">$3,000,000+</option>
+          </select>
         </div>
-        <div class="stat">
-          <span class="stat-icon">&#36;</span>
-          <strong class="stat-num">Flat<br>Fee</strong>
-          <span class="stat-label">No % Commission</span>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label for="s-beds">Beds</label>
+          <select id="s-beds" name="beds">
+            <option value="">Any</option>
+            <option>2+</option>
+            <option>3+</option>
+            <option>4+</option>
+            <option>5+</option>
+          </select>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SAVINGS CALCULATOR ────────────────────────────────────────────────── -->
-  <section id="savings" class="section-cream">
-    <div class="section-inner">
-      <p class="section-label gold">Savings Calculator</p>
-      <h2>How Much Will You Keep?</h2>
-      <p class="section-sub">Enter your asking price — see the difference instantly.</p>
-
-      <div class="calc-wrap">
-        <div class="calc-left">
-          <label class="calc-label" for="price-input">Your asking price</label>
-          <div class="price-input-wrap">
-            <span class="dollar-sign">$</span>
-            <input id="price-input" type="text" inputmode="numeric" placeholder="350,000" autocomplete="off" />
-          </div>
-          <input id="price-slider" type="range" min="100000" max="1000000" step="5000" value="350000" />
-          <div class="slider-labels"><span>$100k</span><span>$1M</span></div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label for="s-baths">Baths</label>
+          <select id="s-baths" name="baths">
+            <option value="">Any</option>
+            <option>2+</option>
+            <option>3+</option>
+            <option>4+</option>
+          </select>
         </div>
-
-        <div class="calc-right">
-          <div class="result-pair">
-            <div class="result-card result-ours">
-              <p class="result-label">Williamson Flat Fee</p>
-              <p class="result-amount" id="our-fee">$8,000</p>
-            </div>
-            <div class="result-vs">vs.</div>
-            <div class="result-card result-theirs">
-              <p class="result-label">Typical 5% Agent</p>
-              <p class="result-amount" id="typical-fee">$17,500</p>
-            </div>
-          </div>
-          <div class="savings-banner">
-            You keep an extra <strong id="savings-amount">$9,500</strong>
-            <span id="savings-pct">&nbsp;— 54% less in fees</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PRICING TABLE ─────────────────────────────────────────────────────── -->
-  <section id="pricing">
-    <div class="section-inner">
-      <p class="section-label gold">Fee Schedule</p>
-      <h2>Flat Fee. No Surprises.</h2>
-      <p class="section-sub">One straightforward number, whatever your home sells for.</p>
-
-      <div class="table-wrap">
-        <table class="pricing-table">
-          <thead>
-            <tr>
-              <th>Sale Price Range</th>
-              <th class="col-ours">Williamson Flat Fee</th>
-              <th>Typical 5%</th>
-              <th class="col-save">You Save</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>$200,000 – $299,999</td>
-              <td class="col-ours">$6,000</td>
-              <td>$10,000 – $15,000</td>
-              <td class="col-save">up to <strong>$9,000</strong></td>
-            </tr>
-            <tr>
-              <td>$300,000 – $399,999</td>
-              <td class="col-ours">$8,000</td>
-              <td>$15,000 – $20,000</td>
-              <td class="col-save">up to <strong>$12,000</strong></td>
-            </tr>
-            <tr>
-              <td>$400,000 – $499,999</td>
-              <td class="col-ours">$10,000</td>
-              <td>$20,000 – $25,000</td>
-              <td class="col-save">up to <strong>$15,000</strong></td>
-            </tr>
-            <tr>
-              <td>$500,000 – $599,999</td>
-              <td class="col-ours">$12,000</td>
-              <td>$25,000 – $30,000</td>
-              <td class="col-save">up to <strong>$18,000</strong></td>
-            </tr>
-            <tr>
-              <td>$600,000+</td>
-              <td class="col-ours">$14,000</td>
-              <td>$30,000+</td>
-              <td class="col-save">up to <strong>$16,000+</strong></td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="table-note">* Typical commission = 5% of sale price. Buyer's agent compensation negotiated separately.</p>
-      </div>
+        <button type="submit" class="btn-blue search-btn">Search Properties</button>
+      </form>
     </div>
   </section>
 
   <!-- ── FEATURED LISTINGS ─────────────────────────────────────────────────── -->
-  <section id="listings" class="section-cream">
+  <section id="listings" class="featured-listings" hidden>
     <div class="section-inner">
-      <div class="listings-header">
-        <div>
-          <p class="section-label gold">Featured Listings</p>
-          <h2>Homes in Pelican Bay &amp; Beyond</h2>
-        </div>
-        <a href="#contact" class="link-gold">View All Listings &rarr;</a>
+      <div class="section-header">
+        <h2>Featured Pelican Bay Properties</h2>
+        <a href="#" class="link-blue">View All Properties &rarr;</a>
       </div>
 
       <div class="listings-grid">
-        <!-- Replace with real listings -->
-        <div class="listing-card">
-          <div class="listing-photo listing-photo--placeholder"><span>Coming Soon</span></div>
-          <div class="listing-info">
-            <p class="listing-price">Contact for Price</p>
-            <p class="listing-addr">Pelican Bay, Daytona Beach, FL</p>
-            <p class="listing-specs">3 BD &nbsp;|&nbsp; 2 BA &nbsp;|&nbsp; — SQ FT</p>
+
+        <div class="property-card">
+          <div class="property-photo property-photo--1">
+            <span class="badge badge-green">NEW LISTING</span>
+            <button class="fav-btn" aria-label="Save property">&#9825;</button>
+          </div>
+          <div class="property-info">
+            <div class="property-price-row">
+              <span class="property-price">$1,295,000</span>
+            </div>
+            <div class="property-specs">4 Beds &nbsp;&middot;&nbsp; 3.5 Baths &nbsp;&middot;&nbsp; 3,248 Sq Ft</div>
+            <div class="property-addr">510 Marsh Point Circle, Daytona Beach, FL 32119</div>
           </div>
         </div>
-        <div class="listing-card">
-          <div class="listing-photo listing-photo--placeholder"><span>Coming Soon</span></div>
-          <div class="listing-info">
-            <p class="listing-price">Contact for Price</p>
-            <p class="listing-addr">Pelican Bay, Daytona Beach, FL</p>
-            <p class="listing-specs">4 BD &nbsp;|&nbsp; 2.5 BA &nbsp;|&nbsp; — SQ FT</p>
+
+        <div class="property-card">
+          <div class="property-photo property-photo--2">
+            <span class="badge badge-blue">WATERFRONT</span>
+            <button class="fav-btn" aria-label="Save property">&#9825;</button>
+          </div>
+          <div class="property-info">
+            <div class="property-price-row">
+              <span class="property-price">$2,495,000</span>
+            </div>
+            <div class="property-specs">4 Beds &nbsp;&middot;&nbsp; 4.5 Baths &nbsp;&middot;&nbsp; 4,120 Sq Ft</div>
+            <div class="property-addr">320 Heron Point Drive, Daytona Beach, FL 32119</div>
           </div>
         </div>
-        <div class="listing-card">
-          <div class="listing-photo listing-photo--placeholder"><span>Coming Soon</span></div>
-          <div class="listing-info">
-            <p class="listing-price">Contact for Price</p>
-            <p class="listing-addr">Volusia County, FL</p>
-            <p class="listing-specs">3 BD &nbsp;|&nbsp; 2 BA &nbsp;|&nbsp; — SQ FT</p>
+
+        <div class="property-card">
+          <div class="property-photo property-photo--3">
+            <span class="badge badge-orange">PENDING</span>
+            <button class="fav-btn" aria-label="Save property">&#9825;</button>
+          </div>
+          <div class="property-info">
+            <div class="property-price-row">
+              <span class="property-price">$875,000</span>
+            </div>
+            <div class="property-specs">3 Beds &nbsp;&middot;&nbsp; 2.5 Baths &nbsp;&middot;&nbsp; 2,156 Sq Ft</div>
+            <div class="property-addr">210 Pelican Bay Drive, Daytona Beach, FL 32119</div>
           </div>
         </div>
+
+        <div class="property-card">
+          <div class="property-photo property-photo--4">
+            <span class="badge badge-dark">NEW CONSTRUCTION</span>
+            <button class="fav-btn" aria-label="Save property">&#9825;</button>
+          </div>
+          <div class="property-info">
+            <div class="property-price-row">
+              <span class="property-price">$1,650,000</span>
+            </div>
+            <div class="property-specs">4 Beds &nbsp;&middot;&nbsp; 4 Baths &nbsp;&middot;&nbsp; 3,800 Sq Ft</div>
+            <div class="property-addr">720 Sanctuary Drive, Daytona Beach, FL 32119</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── PELICAN BAY ────────────────────────────────────────────────────────── -->
-  <section id="neighborhood">
+  <!-- ── WELCOME TO PELICAN BAY ─────────────────────────────────────────────── -->
+  <section id="welcome-pb" class="welcome-pb">
     <div class="section-inner">
-      <p class="section-label gold">Local Expertise</p>
-      <h2>We Live in Pelican Bay.</h2>
-      <p class="section-sub">
-        Not just another agent who drives through — we're your neighbors. That means
-        real knowledge of every street, every amenity, and what buyers are paying right now.
-      </p>
+      <div class="welcome-grid">
 
-      <div class="hood-stats">
-        <div class="hood-stat-card">
-          <p class="hood-big">$380k</p>
-          <p class="hood-label">Median Sale Price<br><span>Pelican Bay, 2024</span></p>
+        <div class="welcome-content">
+          <h2>Welcome to Pelican Bay</h2>
+          <p class="welcome-body">A private, gated oceanfront community offering resort-style living with 24/7 security, world-class amenities, and a true sense of community.</p>
+          <ul class="features-list">
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              24/7 Gated Security
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Championship Golf Nearby
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Oceanfront Beach Club
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Walking &amp; Biking Trails
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Tennis, Pickleball &amp; Fitness
+            </li>
+            <li>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Top Rated HOA Management
+            </li>
+          </ul>
+          <a href="#contact" class="btn-outline-blue">Learn More About Pelican Bay</a>
         </div>
-        <div class="hood-stat-card">
-          <p class="hood-big">42</p>
-          <p class="hood-label">Avg. Days on Market<br><span>Volusia County, 2024</span></p>
-        </div>
-        <div class="hood-stat-card">
-          <p class="hood-big">98%</p>
-          <p class="hood-label">List-to-Sale Ratio<br><span>Daytona Beach area</span></p>
-        </div>
-        <div class="hood-stat-card">
-          <p class="hood-big">1,800</p>
-          <p class="hood-label">Homes in Community<br><span>900+ acres, gated</span></p>
-        </div>
-      </div>
 
-      <div class="hood-features">
-        <div class="hood-feature">
-          <span class="feat-dash">—</span>
-          <div>
-            <strong>Guard-Gated, 24/7</strong>
-            <p>Controlled access and roving patrols — a selling point buyers actively seek out.</p>
+        <div class="welcome-photo-wrap">
+          <!-- Replace with aerial Pelican Bay photo -->
+          <div class="welcome-photo">
+            <div class="aerial-placeholder">Aerial Community Photo</div>
+          </div>
+          <div class="pb-stats-card">
+            <div class="pb-stat">
+              <div class="pb-stat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div>
+                <strong class="pb-stat-num">1000+</strong>
+                <span class="pb-stat-label">Homes</span>
+              </div>
+            </div>
+            <div class="pb-stat">
+              <div class="pb-stat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <div>
+                <strong class="pb-stat-num">607</strong>
+                <span class="pb-stat-label">Acres of Paradise</span>
+              </div>
+            </div>
+            <div class="pb-stat">
+              <div class="pb-stat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <strong class="pb-stat-num">24/7</strong>
+                <span class="pb-stat-label">Gated Security</span>
+              </div>
+            </div>
+            <div class="pb-stat">
+              <div class="pb-stat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div>
+                <strong class="pb-stat-num">1</strong>
+                <span class="pb-stat-label">Premier Community</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hood-feature">
-          <span class="feat-dash">—</span>
-          <div>
-            <strong>Golf &amp; Intracoastal Access</strong>
-            <p>On-site golf, scenic canals, and Intracoastal Waterway access attract motivated buyers.</p>
-          </div>
-        </div>
-        <div class="hood-feature">
-          <span class="feat-dash">—</span>
-          <div>
-            <strong>Minutes from Everything</strong>
-            <p>Beach, I-95, Daytona's restaurants and shopping — easy to sell that lifestyle.</p>
-          </div>
-        </div>
-        <div class="hood-feature">
-          <span class="feat-dash">—</span>
-          <div>
-            <strong>Neighbor-Level Knowledge</strong>
-            <p>We know which lots back to the preserve, which streets flood, and what buyers ask about.</p>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── TESTIMONIALS ───────────────────────────────────────────────────────── -->
-  <section id="testimonials">
-    <div class="testimonial-split">
-      <div class="testimonial-text-panel">
-        <span class="quote-mark">&ldquo;</span>
-        <blockquote>
-          We saved over $11,000 compared to what we would have paid a traditional agent.
-          The entire process was smooth, professional, and I always had direct access to my broker.
-          I tell every neighbor in Pelican Bay — call Williamson first.
-        </blockquote>
-        <p class="testimonial-attr">— J. &amp; M. T., Pelican Bay</p>
-      </div>
-      <div class="testimonial-photo">
-        <img src="public/living_room.png" alt="Beautiful Pelican Bay living room" />
+  <!-- ── VALUE PROPS ───────────────────────────────────────────────────────── -->
+  <section id="value-props" class="value-props">
+    <div class="section-inner">
+      <div class="props-grid">
+
+        <div class="prop-card">
+          <div class="prop-icon prop-icon--green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Buy With Confidence</h3>
+          <p>Local expertise, market insights, and personalized service to help you find your perfect home.</p>
+          <a href="#contact" class="prop-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="prop-card">
+          <div class="prop-icon prop-icon--amber">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/><circle cx="12" cy="12" r="3" fill="white" stroke="none"/><text x="10.5" y="13.5" font-size="6" fill="#C83A00" font-weight="bold">$</text></svg>
+          </div>
+          <h3>Sell For Top Dollar</h3>
+          <p>Strategic marketing, professional staging, and expert negotiation for maximum results.</p>
+          <a href="#contact" class="prop-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="prop-card">
+          <div class="prop-icon prop-icon--blue">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Pelican Bay Experts</h3>
+          <p>We live, work, and play in Pelican Bay. Our knowledge is your advantage.</p>
+          <a href="#about" class="prop-link">Meet Our Team &rarr;</a>
+        </div>
+
+        <div class="prop-card">
+          <div class="prop-icon prop-icon--gray">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Market Insights</h3>
+          <p>Stay informed with the latest Pelican Bay market trends and HOA updates.</p>
+          <a href="#" class="prop-link">View Market Reports &rarr;</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── HOMEGENTIC PROMO ──────────────────────────────────────────────────── -->
+  <!-- ── TESTIMONIALS ──────────────────────────────────────────────────────── -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-inner">
+      <h2 class="text-center">What Our Clients Say</h2>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">&ldquo;The Williamson team knows Pelican Bay inside and out. They made our home buying experience seamless and enjoyable.&rdquo;</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#FFF3EE;color:#EB4203">JR</div>
+            <div class="author-info">
+              <strong>Jennifer R.</strong>
+              <span>Pelican Bay Homeowner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">&ldquo;Professional, responsive, and results-driven. Our home sold quickly and for top dollar. Highly recommend!&rdquo;</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#E0FAFA;color:#007B78">MT</div>
+            <div class="author-info">
+              <strong>Michael T.</strong>
+              <span>Pelican Bay Seller</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">&ldquo;Living in Pelican Bay is a dream. The community, the amenities, and the people are second to none.&rdquo;</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#FCEFC3;color:#C83A00">SL</div>
+            <div class="author-info">
+              <strong>Susan L.</strong>
+              <span>Pelican Bay Resident</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ────────────────────────────────────────────────────────── -->
+  <section class="cta-banner">
+    <div class="cta-inner">
+      <div class="cta-logo">
+        <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none">
+          <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
+          <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
+          <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
+          <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
+        </svg>
+      </div>
+      <div class="cta-text">
+        <h3>Ready to Make Pelican Bay Your Home?</h3>
+        <p>Let&rsquo;s find the perfect property for your lifestyle.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#contact" class="btn-blue">Contact Us Today</a>
+        <a href="tel:+13865551234" class="btn-outline-blue-sm">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+          (386) 555-1234
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOMEGENTIC ───────────────────────────────────────────────────────────── -->
   <section id="homegentic" class="hg-section">
-    <div class="hg-inner">
+    <div class="section-inner hg-inner">
 
       <div class="hg-copy">
-        <p class="section-label" style="color: var(--gold);">HomeGentic &mdash; Partner</p>
-        <h2 class="hg-heading">Your Home Has a Story.<br><em>Now It Has a Record.</em></h2>
-        <p class="hg-lead">
-          Williamson clients who list with a verified HomeGentic home record
-          go to closing faster and with fewer surprises — giving buyers the
-          confidence to offer full price.
-        </p>
+        <div class="hg-exclusive-badge">Williamson Client Exclusive</div>
+        <h2>Your Home Has a Story.<br>Now It Has a Record.</h2>
+        <p class="hg-lead">Every Williamson Real Estate client &mdash; buyer or seller &mdash; receives a <strong>free one-year HomeGentic Basic subscription</strong>. Build a verified home record that speeds up closings, reduces buyer objections, and protects your investment long after the sale.</p>
         <ul class="hg-list">
           <li>
-            <span class="hg-dash">—</span>
+            <div class="hg-list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
             <div>
               <strong>The Carfax for your home</strong>
-              <p>Every repair, renovation, and inspection permanently documented and
-                 blockchain-verified — one shareable link for your buyer.</p>
+              <p>Every repair, renovation, and inspection permanently documented and blockchain-verified &mdash; one shareable link for buyers.</p>
             </div>
           </li>
           <li>
-            <span class="hg-dash">—</span>
-            <div>
-              <strong>Cuts due-diligence friction</strong>
-              <p>Buyers and their inspectors spend less time questioning maintenance
-                 history, which means fewer renegotiations and faster closings.</p>
+            <div class="hg-list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-          </li>
-          <li>
-            <span class="hg-dash">—</span>
             <div>
               <strong>AI-verified contractor work</strong>
-              <p>Work logged directly by credentialed contractors in the HomeGentic
-                 network — not just homeowner self-reporting.</p>
+              <p>Work logged directly by credentialed contractors in the HomeGentic network &mdash; not just homeowner self-reporting.</p>
             </div>
           </li>
           <li>
-            <span class="hg-dash">—</span>
+            <div class="hg-list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
             <div>
-              <strong>Free to start</strong>
-              <p>Build your verified record before you list — at no cost.
-                 Pair it with Williamson&rsquo;s flat fee to maximize what you walk away with.</p>
+              <strong>Cuts due-diligence friction</strong>
+              <p>Buyers and their inspectors spend less time questioning history, which means fewer renegotiations and faster closings.</p>
+            </div>
+          </li>
+          <li>
+            <div class="hg-list-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Predictive maintenance scheduling</strong>
+              <p>AI-powered alerts keep your systems running so surprise breakdowns don&rsquo;t derail your listing or your first year in a new home.</p>
             </div>
           </li>
         </ul>
-        <a href="https://homegentic.app" target="_blank" rel="noopener noreferrer" class="btn-gold hg-cta">
-          Build My Home Record &rarr;
+        <a href="https://homegentic.app" target="_blank" rel="noopener noreferrer" class="btn-blue hg-cta-btn">
+          Learn More About HomeGentic &rarr;
         </a>
       </div>
 
-      <div class="hg-card-grid">
-        <div class="hg-card">
-          <p class="hg-card-icon">&#128203;</p>
-          <p class="hg-card-title">Verified Records</p>
-          <p class="hg-card-desc">Repairs, permits &amp; warranties — permanently logged.</p>
-        </div>
-        <div class="hg-card">
-          <p class="hg-card-icon">&#127908;</p>
-          <p class="hg-card-title">AI Home Agent</p>
-          <p class="hg-card-desc">Voice queries across your full maintenance history.</p>
-        </div>
-        <div class="hg-card">
-          <p class="hg-card-icon">&#128200;</p>
-          <p class="hg-card-title">Live Home Score</p>
-          <p class="hg-card-desc">A health score buyers and agents trust at a glance.</p>
-        </div>
-        <div class="hg-card">
-          <p class="hg-card-icon">&#128373;</p>
-          <p class="hg-card-title">Vetted Network</p>
-          <p class="hg-card-desc">Background-checked contractors, work auto-logged.</p>
+      <div class="hg-card-wrap">
+        <div class="hg-offer-card">
+          <div class="hg-offer-badge">FREE &mdash; 1 Year</div>
+          <div class="hg-offer-logo">
+            <svg width="32" height="30" viewBox="0 0 42 40" fill="none">
+              <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
+              <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
+              <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
+              <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
+            </svg>
+            <span>HomeGentic <strong>Basic</strong></span>
+          </div>
+          <p class="hg-offer-sub">Included with every Williamson Real Estate transaction</p>
+          <ul class="hg-feature-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              1 property &mdash; full history
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Verified maintenance records
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              AI predictive maintenance
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Shareable property report link
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              5 photos per job record
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Property Health Score
+            </li>
+          </ul>
+          <div class="hg-offer-price">
+            <span class="hg-price-was">$10<span>/mo value</span></span>
+            <span class="hg-price-free">Free for 1 year</span>
+          </div>
+          <a href="#contact" class="btn-blue btn-full">Claim Your Free Year</a>
+          <p class="hg-offer-note">Activated at closing. No credit card required.</p>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ── HOME VALUATION ────────────────────────────────────────────────────── -->
-  <section id="valuation" class="section-cream">
-    <div class="section-inner valuation-inner">
-      <div class="valuation-copy">
-        <p class="section-label gold">Free Home Valuation</p>
-        <h2>Find Out What You'll Actually Walk Away With</h2>
-        <p>
-          Before you list, know exactly what your home is worth — and exactly how much
-          you'd save with a flat fee. No cost, no pressure, delivered within 24 hours.
-        </p>
-        <ul class="valuation-bullets">
-          <li>Your home's estimated value based on recent Pelican Bay sales</li>
-          <li>Your exact dollar savings vs. a 5% commission — down to the penny</li>
-          <li>Days-on-market data and current buyer demand in your area</li>
-          <li>A straight answer — no sales pitch, no obligation</li>
-        </ul>
-      </div>
-      <form id="valuation-form" class="lead-form" novalidate>
-        <div class="form-row">
-          <label for="v-address">Property Address <span class="req">*</span></label>
-          <input id="v-address" name="address" type="text" placeholder="123 Pelican Way, Daytona Beach, FL 32119" required />
-          <span class="field-error" id="verr-address"></span>
-        </div>
-        <div class="form-row form-row-half">
-          <div>
-            <label for="v-name">Your Name <span class="req">*</span></label>
-            <input id="v-name" name="name" type="text" autocomplete="name" required />
-            <span class="field-error" id="verr-name"></span>
-          </div>
-          <div>
-            <label for="v-phone">Phone <span class="req">*</span></label>
-            <input id="v-phone" name="phone" type="tel" autocomplete="tel" required />
-            <span class="field-error" id="verr-phone"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <label for="v-email">Email <span class="req">*</span></label>
-          <input id="v-email" name="email" type="email" autocomplete="email" required />
-          <span class="field-error" id="verr-email"></span>
-        </div>
-        <div class="form-row">
-          <label for="v-timeline">When are you thinking of selling? <span class="opt">(optional)</span></label>
-          <select id="v-timeline" name="timeline">
-            <option value="">Select a timeframe…</option>
-            <option>As soon as possible</option>
-            <option>1–3 months</option>
-            <option>3–6 months</option>
-            <option>6–12 months</option>
-            <option>Just exploring</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-gold btn-full" id="val-submit-btn">Get My Free Valuation</button>
-        <p class="form-note">No spam, ever. Straight answers within one business day.</p>
-      </form>
-      <div id="valuation-success" class="form-success" hidden>
-        <p class="success-icon">&#10003;</p>
-        <h3>Request received!</h3>
-        <p>Expect your market analysis within one business day.</p>
-      </div>
     </div>
   </section>
 
   <!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
-  <section id="contact">
-    <div class="cta-strip">
-      <div class="cta-strip-text">
-        <strong>Most Pelican Bay sellers save over $10,000. Ready to keep yours?</strong>
-        <p>Whether you're ready to list or just want straight answers — I'll show you the numbers first.</p>
-      </div>
-      <a href="tel:+13865550000" class="btn-gold">Call Now</a>
-    </div>
-
+  <section id="contact" class="contact-section">
     <div class="section-inner contact-inner">
       <div class="contact-copy">
-        <p class="section-label gold">Get In Touch</p>
-        <h2>Let's Talk About Your Home</h2>
-        <p>Fill out the form and I'll be in touch within one business day.</p>
+        <p class="eyebrow-blue">Get In Touch</p>
+        <h2>Let&rsquo;s Talk About Your Home</h2>
+        <p>Fill out the form and we&rsquo;ll be in touch within one business day.</p>
         <div class="contact-details">
-          <p><strong>Williamson Real Estate</strong></p>
-          <p>Licensed Real Estate Broker</p>
-          <p>Pelican Bay · Daytona Beach · Port Orange · Ormond Beach</p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+            (386) 555-1234
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@sellingpelicanbay.com
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            2855 Pelican Bay Drive, Daytona Beach, FL 32119
+          </p>
         </div>
       </div>
 
-      <form id="lead-form" class="lead-form" novalidate>
-        <div class="form-row">
-          <label for="f-name">Full Name <span class="req">*</span></label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required />
-          <span class="field-error" id="err-name"></span>
-        </div>
+      <form id="contact-form" class="contact-form" novalidate>
         <div class="form-row form-row-half">
           <div>
-            <label for="f-phone">Phone <span class="req">*</span></label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" required />
-            <span class="field-error" id="err-phone"></span>
+            <label for="c-name">Full Name <span class="req">*</span></label>
+            <input id="c-name" name="name" type="text" autocomplete="name" required />
+            <span class="field-error" id="cerr-name"></span>
           </div>
           <div>
-            <label for="f-email">Email <span class="req">*</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required />
-            <span class="field-error" id="err-email"></span>
+            <label for="c-phone">Phone <span class="req">*</span></label>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel" required />
+            <span class="field-error" id="cerr-phone"></span>
           </div>
         </div>
         <div class="form-row">
-          <label for="f-address">Property Address <span class="req">*</span></label>
-          <input id="f-address" name="address" type="text" placeholder="123 Pelican Way, Daytona Beach, FL" required />
-          <span class="field-error" id="err-address"></span>
+          <label for="c-email">Email <span class="req">*</span></label>
+          <input id="c-email" name="email" type="email" autocomplete="email" required />
+          <span class="field-error" id="cerr-email"></span>
         </div>
         <div class="form-row">
-          <label for="f-price">Estimated Sale Price <span class="opt">(optional)</span></label>
-          <div class="price-input-wrap">
-            <span class="dollar-sign">$</span>
-            <input id="f-price" name="estimatedPrice" type="text" inputmode="numeric" placeholder="350,000" />
-          </div>
+          <label for="c-message">Message <span class="opt">(optional)</span></label>
+          <textarea id="c-message" name="message" rows="4" placeholder="How can we help you?"></textarea>
         </div>
-        <div class="form-row">
-          <label for="f-message">Message <span class="opt">(optional)</span></label>
-          <textarea id="f-message" name="message" rows="3" placeholder="Timeline, questions, anything on your mind…"></textarea>
-        </div>
-        <button type="submit" class="btn-gold btn-full" id="submit-btn">Send My Info</button>
-        <p class="form-note">We'll never share your information. No spam, ever.</p>
+        <button type="submit" class="btn-blue btn-full" id="contact-submit-btn">Contact Us Today</button>
+        <p class="form-note">No spam, ever. We&rsquo;ll respond within one business day.</p>
       </form>
-      <div id="form-success" class="form-success" hidden>
+      <div id="contact-success" class="form-success" hidden>
         <p class="success-icon">&#10003;</p>
-        <h3>Got it — we'll be in touch.</h3>
-        <p>Expect a call or email within one business day.</p>
+        <h3>Message received!</h3>
+        <p>We&rsquo;ll be in touch within one business day.</p>
       </div>
     </div>
   </section>
 
   <!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
-  <footer>
+  <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="logo-name">WILLIAMSON</span>
-        <span class="logo-sub">REAL ESTATE</span>
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none">
+            <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
+            <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
+            <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
+            <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-name">WILLIAMSON</span>
+            <span class="logo-sub" style="color:#94A3B8">REAL ESTATE</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Your Pelican Bay Real Estate Experts<br>Daytona Beach, Florida</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-contact">
-        <span>&#9990; (386) 000-0000</span>
-        <span>&#9993; info@williamsonre.com</span>
-        <span>Volusia County, FL</span>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#listings">Properties</a></li>
+          <li><a href="#welcome-pb">Pelican Bay</a></li>
+          <li><a href="#value-props">Buyers</a></li>
+          <li><a href="#value-props">Sellers</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
       </div>
-      <p class="footer-legal">Licensed Real Estate Broker · Florida &nbsp;·&nbsp; © 2025 Williamson Real Estate</p>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Market Reports</a></li>
+          <li><a href="#">HOA Information</a></li>
+          <li><a href="#">Community Guide</a></li>
+          <li><a href="#">Buying Guide</a></li>
+          <li><a href="#">Selling Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+            (386) 555-1234
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@sellingpelicanbay.com
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            2855 Pelican Bay Drive<br>Daytona Beach, FL 32119
+          </li>
+          <li class="footer-website">
+            <a href="#">sellingpelicanbay.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Williamson Real Estate. Licensed Real Estate Broker &middot; Florida. All rights reserved.</p>
     </div>
   </footer>
 
