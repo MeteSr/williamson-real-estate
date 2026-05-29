@@ -42,7 +42,7 @@ h3 { font-size: 1.125rem; font-weight: 700; color: var(--dark); }
 p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
 
 .eyebrow-blue {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -65,7 +65,7 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
   font-family: var(--sans);
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.625rem 1.375rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius);
   border: 2px solid var(--blue);
   transition: background 0.18s, border-color 0.18s, transform 0.12s;
@@ -83,7 +83,7 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
   color: var(--gray-700);
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.625rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius);
   border: 2px solid var(--gray-300);
   transition: border-color 0.18s, color 0.18s;
@@ -100,7 +100,7 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
   color: var(--blue);
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.625rem 1.375rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius);
   border: 2px solid var(--blue);
   transition: background 0.18s, color 0.18s;
@@ -172,7 +172,7 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
   line-height: 1;
 }
 .logo-sub {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--gray-500);
   letter-spacing: 0.1em;
@@ -226,7 +226,11 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 6px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -290,7 +294,7 @@ h1.hero-h1,
 .hero-image {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 420px;
+  height: clamp(260px, 50vw, 420px);
   /* Replace with: background-image: url('public/pelican-bay-hero.jpg'); background-size: cover; background-position: center; */
   background: linear-gradient(135deg, #FCEFC3 0%, #FF9C5F 40%, #EB4203 70%, #C83A00 100%);
   position: relative;
@@ -383,7 +387,7 @@ h1.hero-h1,
 
 .property-photo {
   position: relative;
-  height: 180px;
+  height: clamp(150px, 35vw, 180px);
   background: var(--gray-100);
   overflow: hidden;
 }
@@ -412,8 +416,8 @@ h1.hero-h1,
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: white;
   border: none;
@@ -485,7 +489,7 @@ h1.hero-h1,
 .welcome-photo {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 380px;
+  height: clamp(250px, 45vw, 380px);
   /* Replace with: background-image: url('public/pelican-bay-aerial.jpg'); background-size: cover; background-position: center; */
   background: linear-gradient(160deg, #E0FAFA 0%, #00CEC8 40%, #008A87 70%, #005655 100%);
 }
@@ -968,7 +972,7 @@ h1.hero-h1,
 }
 .social-link:hover { background: rgba(255,255,255,0.15); color: white; }
 
-.footer-col h4 {
+.footer-col h3 {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--white);
@@ -1019,7 +1023,7 @@ h1.hero-h1,
 
 @media (max-width: 768px) {
   .hero-inner          { grid-template-columns: 1fr; }
-  .hero-image          { height: 260px; }
+  .hero-image          { height: clamp(220px, 55vw, 300px); }
   .hero-content        { max-width: 100%; }
   .welcome-grid        { grid-template-columns: 1fr; }
   .testimonials-grid   { grid-template-columns: 1fr; }
@@ -1042,7 +1046,8 @@ h1.hero-h1,
   .nav-links.open { display: flex; }
   .nav-links a { padding: 0.75rem 1.5rem; border-radius: 0; }
   .nav-burger { display: flex; }
-  .nav-right .nav-phone { display: none; }
+  .nav-right .nav-phone .nav-phone-text { display: none; }
+  .nav-right .nav-phone { min-width: 44px; min-height: 44px; justify-content: center; }
 }
 
 @media (max-width: 640px) {

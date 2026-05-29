@@ -9,13 +9,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://www.sellingpelicanbay.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sellingpelicanbay.com/" />
+  <meta property="og:title" content="Williamson Real Estate — Pelican Bay Real Estate Experts" />
+  <meta property="og:description" content="Williamson Real Estate — Your Pelican Bay Real Estate Experts. Specializing in buying and selling in Pelican Bay, Daytona Beach's premier gated coastal community." />
+  <meta property="og:image" content="https://www.sellingpelicanbay.com/public/og-image.jpg" />
+  <meta property="og:site_name" content="Williamson Real Estate" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Williamson Real Estate — Pelican Bay Real Estate Experts" />
+  <meta name="twitter:description" content="Your Pelican Bay Real Estate Experts. Specializing in buying and selling in Pelican Bay, Daytona Beach's premier gated coastal community." />
+  <meta name="twitter:image" content="https://www.sellingpelicanbay.com/public/og-image.jpg" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["RealEstateAgent", "LocalBusiness"],
+    "name": "Williamson Real Estate",
+    "description": "Your Pelican Bay Real Estate Experts. Specializing in buying and selling in Pelican Bay, Daytona Beach's premier gated coastal community.",
+    "url": "https://www.sellingpelicanbay.com",
+    "telephone": "+1-386-852-7207",
+    "email": "info@sellingpelicanbay.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2855 Pelican Bay Drive",
+      "addressLocality": "Daytona Beach",
+      "addressRegion": "FL",
+      "postalCode": "32119",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Pelican Bay, Daytona Beach, Florida"
+    },
+    "priceRange": "$$$"
+  }
+  </script>
 </head>
 <body>
 
   <!-- ── NAV ─────────────────────────────────────────────────────────────── -->
   <nav id="main-nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
+      <a href="/" class="nav-logo">
         <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
           <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
@@ -30,7 +71,7 @@
       </a>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li class="has-dropdown">
           <a href="#listings">Properties <span class="nav-arrow">&#9660;</span></a>
         </li>
@@ -44,17 +85,17 @@
           <a href="#value-props">Sellers <span class="nav-arrow">&#9660;</span></a>
         </li>
         <li class="has-dropdown">
-          <a href="#about">About <span class="nav-arrow">&#9660;</span></a>
+          <a href="#contact">About <span class="nav-arrow">&#9660;</span></a>
         </li>
         <li class="has-dropdown">
-          <a href="#">Resources <span class="nav-arrow">&#9660;</span></a>
+          <a href="#contact">Resources <span class="nav-arrow">&#9660;</span></a>
         </li>
       </ul>
 
       <div class="nav-right">
-        <a href="tel:+13865551234" class="nav-phone">
+        <a href="tel:+13868527207" class="nav-phone">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
-          (386) 555-1234
+          <span class="nav-phone-text">(386) 852-7207</span>
         </a>
         <a href="#contact" class="btn-blue">Contact Us</a>
       </div>
@@ -150,11 +191,11 @@
   </section>
 
   <!-- ── FEATURED LISTINGS ─────────────────────────────────────────────────── -->
-  <section id="listings" class="featured-listings" hidden>
+  <section id="listings" class="featured-listings">
     <div class="section-inner">
       <div class="section-header">
         <h2>Featured Pelican Bay Properties</h2>
-        <a href="#" class="link-blue">View All Properties &rarr;</a>
+        <a href="#contact" class="link-blue">View All Properties &rarr;</a>
       </div>
 
       <div class="listings-grid">
@@ -334,7 +375,7 @@
           </div>
           <h3>Pelican Bay Experts</h3>
           <p>We live, work, and play in Pelican Bay. Our knowledge is your advantage.</p>
-          <a href="#about" class="prop-link">Meet Our Team &rarr;</a>
+          <a href="#contact" class="prop-link">Meet Our Team &rarr;</a>
         </div>
 
         <div class="prop-card">
@@ -414,9 +455,9 @@
       </div>
       <div class="cta-actions">
         <a href="#contact" class="btn-blue">Contact Us Today</a>
-        <a href="tel:+13865551234" class="btn-outline-blue-sm">
+        <a href="tel:+13868527207" class="btn-outline-blue-sm">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
-          (386) 555-1234
+          (386) 852-7207
         </a>
       </div>
     </div>
@@ -535,7 +576,7 @@
         <div class="contact-details">
           <p>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
-            (386) 555-1234
+            (386) 852-7207
           </p>
           <p>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -617,18 +658,18 @@
       </div>
 
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h3>Quick Links</h3>
         <ul>
           <li><a href="#listings">Properties</a></li>
           <li><a href="#welcome-pb">Pelican Bay</a></li>
           <li><a href="#value-props">Buyers</a></li>
           <li><a href="#value-props">Sellers</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">About Us</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Resources</h4>
+        <h3>Resources</h3>
         <ul>
           <li><a href="#">Market Reports</a></li>
           <li><a href="#">HOA Information</a></li>
@@ -639,11 +680,11 @@
       </div>
 
       <div class="footer-col">
-        <h4>Contact Us</h4>
+        <h3>Contact Us</h3>
         <ul class="footer-contact-list">
           <li>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
-            (386) 555-1234
+            (386) 852-7207
           </li>
           <li>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -654,7 +695,7 @@
             2855 Pelican Bay Drive<br>Daytona Beach, FL 32119
           </li>
           <li class="footer-website">
-            <a href="#">sellingpelicanbay.com</a>
+            <a href="https://www.sellingpelicanbay.com">sellingpelicanbay.com</a>
           </li>
         </ul>
       </div>
