@@ -105,9 +105,15 @@ contactForm.addEventListener("submit", async (e) => {
 const navBurger  = document.getElementById("nav-burger");
 const navLinksEl = document.querySelector(".nav-links");
 if (navBurger && navLinksEl) {
-  navBurger.addEventListener("click", () => navLinksEl.classList.toggle("open"));
+  navBurger.addEventListener("click", () => {
+    const isOpen = navLinksEl.classList.toggle("open");
+    navBurger.setAttribute("aria-expanded", isOpen);
+  });
   navLinksEl.querySelectorAll("a").forEach(a =>
-    a.addEventListener("click", () => navLinksEl.classList.remove("open"))
+    a.addEventListener("click", () => {
+      navLinksEl.classList.remove("open");
+      navBurger.setAttribute("aria-expanded", "false");
+    })
   );
 }
 
