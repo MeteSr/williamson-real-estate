@@ -172,6 +172,7 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
 .nav-logo-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   line-height: 1.2;
 }
 .nav-logo-name {
@@ -188,12 +189,13 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gray-500);
+  margin-left: 0.125rem;
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0;
 }
 .footer-logo-img {
   height: 56px;
@@ -204,6 +206,7 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
 .footer-logo-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   line-height: 1.2;
 }
 .footer-logo-name {
@@ -630,8 +633,8 @@ h1.hero-h1,
 
 /* ── SAVINGS CALCULATOR ───────────────────────────────────────────────────── */
 .calc-section {
-  background: #F0EDE6;
-  border-top: 1px solid var(--border);
+  background: linear-gradient(135deg, #06102A 0%, #0D2149 60%, #1B3A6B 100%);
+  border-top: none;
   padding: 5rem var(--pad);
 }
 
@@ -1417,6 +1420,12 @@ h1.hero-h1,
   font-size: 0.875rem;
   color: #94A3B8;
   line-height: 1.6;
+}
+.footer-license {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  line-height: 1.7;
+  margin: 0.5rem 0 0;
 }
 
 .social-links { display: flex; gap: 0.625rem; margin-top: 0.25rem; }
