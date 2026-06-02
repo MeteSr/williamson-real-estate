@@ -116,6 +116,56 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+/* ── Savings Calculator ──────────────────────────────────────────────────── */
+
+const calcSlider      = document.getElementById("calc-slider");
+const calcBubble      = document.getElementById("calc-bubble");
+const calcTraditional = document.getElementById("calc-traditional");
+const calcWilliamson  = document.getElementById("calc-williamson");
+const calcSavings     = document.getElementById("calc-savings");
+
+if (calcSlider) {
+  const TRADITIONAL_RATE = 0.03;
+  const WILLIAMSON_RATE  = 0.0125;
+  const THUMB_HALF       = 11; // half of 22px thumb
+
+  function updateSliderFill() {
+    const min = parseInt(calcSlider.min, 10);
+    const max = parseInt(calcSlider.max, 10);
+    const val = parseInt(calcSlider.value, 10);
+    const pct = (val - min) / (max - min) * 100;
+    calcSlider.style.setProperty("--fill-pct", pct.toFixed(2) + "%");
+    return { min, max, val, pct };
+  }
+
+  function positionBubble(pct) {
+    const track = calcSlider.offsetWidth;
+    const left  = (pct / 100) * (track - THUMB_HALF * 2) + THUMB_HALF;
+    calcBubble.style.left = left + "px";
+  }
+
+  function updateCalc() {
+    const { val, pct } = updateSliderFill();
+    const traditional = Math.round(val * TRADITIONAL_RATE);
+    const williamson  = Math.round(val * WILLIAMSON_RATE);
+    const savings     = traditional - williamson;
+
+    calcBubble.textContent      = "$" + val.toLocaleString();
+    calcTraditional.textContent = "$" + traditional.toLocaleString();
+    calcWilliamson.textContent  = "$" + williamson.toLocaleString();
+    calcSavings.textContent     = "$" + savings.toLocaleString();
+    positionBubble(pct);
+  }
+
+  calcSlider.addEventListener("input", updateCalc);
+  window.addEventListener("resize", () => {
+    const pct = (parseInt(calcSlider.value, 10) - parseInt(calcSlider.min, 10))
+              / (parseInt(calcSlider.max, 10) - parseInt(calcSlider.min, 10)) * 100;
+    positionBubble(pct);
+  });
+  updateCalc();
+}
+
 /* ── ICP Canister stub ──────────────────────────────────────────────────────
    Replace with @dfinity/agent + Candid IDL once LEADS_CANISTER_ID is set.
 ────────────────────────────────────────────────────────────────────────── */

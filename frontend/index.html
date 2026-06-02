@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="public/williamson_realestate_logo.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="canonical" href="https://www.sellingpelicanbay.com/" />
 
@@ -37,7 +38,7 @@
     "email": "info@sellingpelicanbay.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2855 Pelican Bay Drive",
+      "streetAddress": "813 Pelican Bay Drive",
       "addressLocality": "Daytona Beach",
       "addressRegion": "FL",
       "postalCode": "32119",
@@ -57,44 +58,22 @@
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
-          <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
-          <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
-          <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
-        </svg>
-        <div class="logo-text">
-          <span class="logo-name">WILLIAMSON</span>
-          <span class="logo-sub">REAL ESTATE</span>
+        <img src="public/williamson_realestate_logo.png" alt="" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Williamson</span>
+          <span class="nav-logo-sub">Real Estate</span>
         </div>
       </a>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="/">Home</a></li>
-        <li class="has-dropdown">
-          <a href="#listings">Properties <span class="nav-arrow">&#9660;</span></a>
-        </li>
-        <li class="has-dropdown">
-          <a href="#welcome-pb">Pelican Bay <span class="nav-arrow">&#9660;</span></a>
-        </li>
-        <li class="has-dropdown">
-          <a href="#value-props">Buyers <span class="nav-arrow">&#9660;</span></a>
-        </li>
-        <li class="has-dropdown">
-          <a href="#value-props">Sellers <span class="nav-arrow">&#9660;</span></a>
-        </li>
-        <li class="has-dropdown">
-          <a href="#contact">About <span class="nav-arrow">&#9660;</span></a>
-        </li>
-        <li class="has-dropdown">
-          <a href="#contact">Resources <span class="nav-arrow">&#9660;</span></a>
-        </li>
+        <li><a href="#calculator">Savings Calculator</a></li>
+        <li><a href="#contact">About</a></li>
       </ul>
 
       <div class="nav-right">
         <a href="tel:+13868527207" class="nav-phone">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF5700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
           <span class="nav-phone-text">(386) 852-7207</span>
         </a>
         <a href="#contact" class="btn-blue">Contact Us</a>
@@ -113,12 +92,11 @@
     </div>
     <div class="hero-inner">
       <div class="hero-content">
-        <p class="eyebrow-blue">Pelican Bay Real Estate Experts</p>
         <h1>Your Pelican Bay<br>Real Estate Experts.</h1>
         <p class="hero-tagline">Local. Trusted. Results.</p>
         <p class="hero-sub">Specializing in buying and selling in Pelican Bay,<br>Daytona Beach's premier gated coastal community.</p>
         <div class="hero-actions">
-          <a href="#listings" class="btn-blue">View Properties</a>
+          <a href="#calculator" class="btn-blue">List My Home</a>
           <a href="#welcome-pb" class="btn-outline-dark">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#374151"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="white"/></svg>
             Learn About Pelican Bay
@@ -267,27 +245,27 @@
           <p class="welcome-body">A private, gated oceanfront community offering resort-style living with 24/7 security, world-class amenities, and a true sense of community.</p>
           <ul class="features-list">
             <li>
-              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               24/7 Gated Security
             </li>
             <li>
-              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Championship Golf Nearby
             </li>
             <li>
-              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Oceanfront Beach Club
             </li>
             <li>
-              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Walking &amp; Biking Trails
             </li>
             <li>
-              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Tennis, Pickleball &amp; Fitness
             </li>
             <li>
-              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="feat-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Top Rated HOA Management
             </li>
           </ul>
@@ -295,47 +273,8 @@
         </div>
 
         <div class="welcome-photo-wrap">
-          <!-- Replace with aerial Pelican Bay photo -->
           <div class="welcome-photo">
             <img src="public/pelican_bay_ariel.PNG" alt="Aerial view of Pelican Bay community, Daytona Beach, Florida" style="width:100%;height:100%;object-fit:cover;" />
-          </div>
-          <div class="pb-stats-card">
-            <div class="pb-stat">
-              <div class="pb-stat-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-              <div>
-                <strong class="pb-stat-num">1000+</strong>
-                <span class="pb-stat-label">Homes</span>
-              </div>
-            </div>
-            <div class="pb-stat">
-              <div class="pb-stat-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              </div>
-              <div>
-                <strong class="pb-stat-num">607</strong>
-                <span class="pb-stat-label">Acres of Paradise</span>
-              </div>
-            </div>
-            <div class="pb-stat">
-              <div class="pb-stat-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div>
-                <strong class="pb-stat-num">24/7</strong>
-                <span class="pb-stat-label">Gated Security</span>
-              </div>
-            </div>
-            <div class="pb-stat">
-              <div class="pb-stat-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </div>
-              <div>
-                <strong class="pb-stat-num">1</strong>
-                <span class="pb-stat-label">Premier Community</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -359,7 +298,7 @@
 
         <div class="prop-card">
           <div class="prop-icon prop-icon--amber">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/><circle cx="12" cy="12" r="3" fill="white" stroke="none"/><text x="10.5" y="13.5" font-size="6" fill="#C83A00" font-weight="bold">$</text></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/><circle cx="12" cy="12" r="3" fill="white" stroke="none"/><text x="10.5" y="13.5" font-size="6" fill="#9E4800" font-weight="bold">$</text></svg>
           </div>
           <h3>Sell For Top Dollar</h3>
           <p>Strategic marketing, professional staging, and expert negotiation for maximum results.</p>
@@ -372,7 +311,7 @@
           </div>
           <h3>Pelican Bay Experts</h3>
           <p>We live, work, and play in Pelican Bay. Our knowledge is your advantage.</p>
-          <a href="#contact" class="prop-link">Meet Our Team &rarr;</a>
+          <a href="#contact" class="prop-link">Contact Our Team &rarr;</a>
         </div>
 
         <div class="prop-card">
@@ -388,49 +327,200 @@
     </div>
   </section>
 
-  <!-- ── TESTIMONIALS ──────────────────────────────────────────────────────── -->
-  <section id="testimonials" class="testimonials">
-    <div class="section-inner">
-      <h2 class="text-center">What Our Clients Say</h2>
-      <div class="testimonials-grid">
+  <!-- ── SAVINGS CALCULATOR ───────────────────────────────────────────────── -->
+  <section id="calculator" class="calc-section">
+    <div class="calc-card">
 
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">&ldquo;The Williamson team knows Pelican Bay inside and out. They made our home buying experience seamless and enjoyable.&rdquo;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" style="background:#FFF3EE;color:#EB4203">JR</div>
-            <div class="author-info">
-              <strong>Jennifer R.</strong>
-              <span>Pelican Bay Homeowner</span>
+      <!-- Left panel -->
+      <div class="calc-left">
+        <p class="calc-eyebrow">Selling With Williamson Real Estate</p>
+        <h2 class="calc-headline">See How Much<br>You Save</h2>
+        <p class="calc-lead">Enter your home price to see your estimated savings when you list with Williamson Real Estate.</p>
+
+        <!-- Slider card -->
+        <div class="calc-slider-card">
+          <div class="calc-slider-header">
+            <div class="calc-slider-title">
+              <div class="calc-home-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C76A1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <span>Home Price</span>
             </div>
+            <div class="calc-range-pill">$250,000 &ndash; $2,000,000</div>
+          </div>
+          <div class="calc-track-wrap">
+            <div class="calc-bubble" id="calc-bubble">$400,000</div>
+            <input type="range" id="calc-slider" min="250000" max="2000000" step="5000" value="400000" class="calc-slider" aria-label="Home sale price" />
+          </div>
+          <div class="calc-range-labels">
+            <span>$250,000</span>
+            <span>$2,000,000</span>
           </div>
         </div>
 
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">&ldquo;Professional, responsive, and results-driven. Our home sold quickly and for top dollar. Highly recommend!&rdquo;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" style="background:#E0FAFA;color:#007B78">MT</div>
-            <div class="author-info">
-              <strong>Michael T.</strong>
-              <span>Pelican Bay Seller</span>
+        <!-- Trust cards -->
+        <div class="calc-trust">
+          <div class="calc-trust-card">
+            <div class="calc-trust-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C76A1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
+            <strong class="calc-trust-title">No upfront fees</strong>
+            <p class="calc-trust-desc">You don&rsquo;t pay until closing.</p>
+          </div>
+          <div class="calc-trust-card">
+            <div class="calc-trust-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C76A1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+            </div>
+            <strong class="calc-trust-title">Full-service listing support</strong>
+            <p class="calc-trust-desc">Professional marketing, negotiation &amp; more.</p>
+          </div>
+          <div class="calc-trust-card">
+            <div class="calc-trust-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C76A1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <strong class="calc-trust-title">Local market experts</strong>
+            <p class="calc-trust-desc">Deep knowledge. Better results.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right panel -->
+      <div class="calc-right">
+
+        <!-- YOU SAVE hero -->
+        <div class="calc-hero">
+          <div class="calc-hero-label-row">
+            <div class="calc-hero-line"></div>
+            <span class="calc-hero-label">YOU SAVE</span>
+            <div class="calc-hero-line"></div>
+          </div>
+          <div class="calc-hero-amount" id="calc-savings">$7,000</div>
+          <p class="calc-hero-sub"><strong>58%</strong> lower listing fee than traditional agents</p>
+        </div>
+
+        <div class="calc-divider"></div>
+
+        <p class="calc-comparison-header">Listing Fee Comparison</p>
+
+        <div class="calc-comparison">
+          <div class="calc-bar-row">
+            <div class="calc-bar-meta">
+              <span class="calc-bar-name">Traditional Agent</span>
+              <span class="calc-bar-amount" id="calc-traditional">$12,000</span>
+            </div>
+            <div class="calc-bar-track">
+              <div class="calc-bar calc-bar--traditional"></div>
+            </div>
+            <p class="calc-bar-sub">3.0% of home price</p>
+          </div>
+          <div class="calc-bar-row">
+            <div class="calc-bar-meta">
+              <span class="calc-bar-name">Williamson Real Estate</span>
+              <span class="calc-bar-amount calc-bar-amount--orange" id="calc-williamson">$5,000</span>
+            </div>
+            <div class="calc-bar-track">
+              <div class="calc-bar calc-bar--williamson"></div>
+            </div>
+            <p class="calc-bar-sub">1.25% of home price</p>
           </div>
         </div>
 
-        <div class="testimonial-card">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">&ldquo;Living in Pelican Bay is a dream. The community, the amenities, and the people are second to none.&rdquo;</p>
-          <div class="testimonial-author">
-            <div class="author-avatar" style="background:#FCEFC3;color:#C83A00">SL</div>
-            <div class="author-info">
-              <strong>Susan L.</strong>
-              <span>Pelican Bay Resident</span>
-            </div>
+        <a href="#contact" class="calc-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+          Get My Savings Estimate &rarr;
+        </a>
+
+        <div class="calc-badge">
+          <div class="calc-badge-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C76A1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="calc-badge-text">
+            <strong>Trusted by homeowners across the market</strong>
+            <p>Transparent fees. Exceptional results.</p>
           </div>
         </div>
 
       </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHY PELICAN BAY ───────────────────────────────────────────────────── -->
+  <section id="why-pelican-bay" class="pb-section">
+    <div class="section-inner">
+
+      <div class="pb-header">
+<h2>Why Pelican Bay?</h2>
+        <p class="pb-intro">Pelican Bay is Daytona Beach&rsquo;s premier gated community &mdash; a master-planned enclave where resort-style living meets strong investment fundamentals.</p>
+      </div>
+
+      <div class="pb-grid">
+
+        <div class="pb-card">
+          <div class="pb-icon pb-icon--navy">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Gated &amp; Secure</h4>
+          <p>24-hour staffed entry, private streets, and a close-knit neighborhood that takes pride in keeping the community safe.</p>
+        </div>
+
+        <div class="pb-card">
+          <div class="pb-icon pb-icon--orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4>Golf &amp; Recreation</h4>
+          <p>Adjacent to LPGA International Golf Club, with on-site tennis, pickleball, fitness facilities, and resort-style pools.</p>
+        </div>
+
+        <div class="pb-card">
+          <div class="pb-icon pb-icon--navy">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 6c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+          </div>
+          <h4>Waterfront Living</h4>
+          <p>Serene lakes and canals wind throughout the community, offering scenic views and coveted waterfront home sites.</p>
+        </div>
+
+        <div class="pb-card">
+          <div class="pb-icon pb-icon--orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Prime Location</h4>
+          <p>Minutes from Daytona Beach Shores, I-95, top-rated dining, Halifax Health Medical Center, and world-class motorsports.</p>
+        </div>
+
+        <div class="pb-card">
+          <div class="pb-icon pb-icon--navy">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h4>Strong Market</h4>
+          <p>Consistent appreciation and limited inventory keep Pelican Bay one of Volusia County&rsquo;s most in-demand addresses year after year.</p>
+        </div>
+
+        <div class="pb-card">
+          <div class="pb-icon pb-icon--orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Vibrant Community</h4>
+          <p>Year-round social events, an active HOA, and a welcoming mix of families, retirees, and professionals who love where they live.</p>
+        </div>
+
+      </div>
+
+      <div class="pb-stats">
+        <div class="pb-stat">
+          <div class="pb-stat-number">1,800<span>+</span></div>
+          <div class="pb-stat-label">Homes in the Community</div>
+        </div>
+        <div class="pb-stat">
+          <div class="pb-stat-number">5<span> mi</span></div>
+          <div class="pb-stat-label">To Daytona Beach Shores</div>
+        </div>
+        <div class="pb-stat">
+          <div class="pb-stat-number">Top 5<span>%</span></div>
+          <div class="pb-stat-label">Appreciation in Volusia County</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -438,13 +528,7 @@
   <section class="cta-banner">
     <div class="cta-inner">
       <div class="cta-logo">
-        <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none">
-          <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
-          <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
-          <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
-          <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
-        </svg>
+        <img src="public/williamson_realestate_logo.png" alt="Williamson Real Estate" class="cta-logo-img" />
       </div>
       <div class="cta-text">
         <h3>Ready to Make Pelican Bay Your Home?</h3>
@@ -516,43 +600,43 @@
           <div class="hg-offer-badge">FREE &mdash; 1 Year</div>
           <div class="hg-offer-logo">
             <svg width="32" height="30" viewBox="0 0 42 40" fill="none">
-              <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-              <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
-              <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
-              <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
-              <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
+              <polygon points="21,2 40,16 2,16" fill="none" stroke="#1B3A6B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#1B3A6B"/>
+              <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#BF5700"/>
+              <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#D4732F"/>
+              <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#9E4800"/>
             </svg>
             <span>HomeGentic <strong>Basic</strong></span>
           </div>
           <p class="hg-offer-sub">Included with every Williamson Real Estate transaction</p>
           <ul class="hg-feature-list">
             <li>
-              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               1 property &mdash; full history
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Verified maintenance records
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               AI predictive maintenance
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Shareable property report link
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               5 photos per job record
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#00CEC8"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#1B3A6B"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Property Health Score
             </li>
           </ul>
           <div class="hg-offer-price">
-            <span class="hg-price-was">$10<span>/mo value</span></span>
+            <span class="hg-price-was">$120<span>/yr value</span></span>
             <span class="hg-price-free">Free for 1 year</span>
           </div>
           <a href="#contact" class="btn-blue btn-full">Claim Your Free Year</a>
@@ -572,16 +656,16 @@
         <p>Fill out the form and we&rsquo;ll be in touch within one business day.</p>
         <div class="contact-details">
           <p>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF5700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.22z"/></svg>
             (386) 852-7207
           </p>
           <p>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF5700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             info@sellingpelicanbay.com
           </p>
           <p>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EB4203" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            2855 Pelican Bay Drive, Daytona Beach, FL 32119
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF5700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            813 Pelican Bay Drive, Daytona Beach, FL 32119
           </p>
         </div>
       </div>
@@ -625,16 +709,10 @@
 
       <div class="footer-brand">
         <div class="footer-logo">
-          <svg class="logo-icon" width="42" height="40" viewBox="0 0 42 40" fill="none">
-            <polygon points="21,2 40,16 2,16" fill="none" stroke="#00CEC8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-            <rect x="2"  y="17" width="17" height="10" rx="1.5" fill="#00CEC8"/>
-            <rect x="23" y="17" width="17" height="10" rx="1.5" fill="#EB4203"/>
-            <rect x="2"  y="29" width="17" height="10" rx="1.5" fill="#FF9C5F"/>
-            <rect x="23" y="29" width="17" height="10" rx="1.5" fill="#C83A00"/>
-          </svg>
-          <div class="logo-text">
-            <span class="logo-name">WILLIAMSON</span>
-            <span class="logo-sub" style="color:#94A3B8">REAL ESTATE</span>
+          <img src="public/williamson_realestate_logo.png" alt="" class="footer-logo-img" />
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Williamson</span>
+            <span class="footer-logo-sub">Real Estate</span>
           </div>
         </div>
         <p class="footer-tagline">Your Pelican Bay Real Estate Experts<br>Daytona Beach, Florida</p>
@@ -657,22 +735,10 @@
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#listings">Properties</a></li>
           <li><a href="#welcome-pb">Pelican Bay</a></li>
-          <li><a href="#value-props">Buyers</a></li>
+          <li><a href="#calculator">Savings Calculator</a></li>
           <li><a href="#value-props">Sellers</a></li>
           <li><a href="#contact">About Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="#">Market Reports</a></li>
-          <li><a href="#">HOA Information</a></li>
-          <li><a href="#">Community Guide</a></li>
-          <li><a href="#">Buying Guide</a></li>
-          <li><a href="#">Selling Guide</a></li>
         </ul>
       </div>
 
@@ -689,7 +755,7 @@
           </li>
           <li>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            2855 Pelican Bay Drive<br>Daytona Beach, FL 32119
+            813 Pelican Bay Drive<br>Daytona Beach, FL 32119
           </li>
           <li class="footer-website">
             <a href="https://www.sellingpelicanbay.com">sellingpelicanbay.com</a>
