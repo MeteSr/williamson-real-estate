@@ -247,20 +247,45 @@ p  { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
 
 /* ── HERO ────────────────────────────────────────────────────────────────── */
 .hero {
-  background: var(--white);
+  position: relative;
+  overflow: hidden;
   padding-top: 3.5rem;
   padding-bottom: 0;
+  min-height: clamp(340px, 52vw, 480px);
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-bg-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.94) 0%,
+    rgba(255,255,255,0.80) 38%,
+    rgba(255,255,255,0.25) 65%,
+    rgba(255,255,255,0.00) 100%
+  );
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 var(--pad);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  padding-bottom: 3rem;
+  padding: 3rem var(--pad);
 }
 
 .hero-content { max-width: 520px; }
@@ -291,26 +316,6 @@ h1.hero-h1,
   flex-wrap: wrap;
 }
 
-.hero-image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  height: clamp(260px, 50vw, 420px);
-  /* Replace with: background-image: url('public/pelican-bay-hero.jpg'); background-size: cover; background-position: center; */
-  background: linear-gradient(135deg, #FCEFC3 0%, #FF9C5F 40%, #EB4203 70%, #C83A00 100%);
-  position: relative;
-}
-
-.hero-photo-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.6);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
 
 .hero-search-wrap {
   background: var(--white);
@@ -451,6 +456,12 @@ h1.hero-h1,
 /* ── WELCOME TO PELICAN BAY ──────────────────────────────────────────────── */
 .welcome-pb { background: var(--white); border-top: 1px solid var(--border); }
 
+.welcome-pb .section-inner {
+  background: #F3F4F6;
+  border-radius: 16px;
+  padding: 3.5rem 3rem;
+}
+
 .welcome-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -490,20 +501,6 @@ h1.hero-h1,
   border-radius: var(--radius-lg);
   overflow: hidden;
   height: clamp(250px, 45vw, 380px);
-  /* Replace with: background-image: url('public/pelican-bay-aerial.jpg'); background-size: cover; background-position: center; */
-  background: linear-gradient(160deg, #E0FAFA 0%, #00CEC8 40%, #008A87 70%, #005655 100%);
-}
-
-.aerial-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
 }
 
 .pb-stats-card {
@@ -550,7 +547,7 @@ h1.hero-h1,
 }
 
 /* ── VALUE PROPS ─────────────────────────────────────────────────────────── */
-.value-props { background: var(--gray-100); border-top: 1px solid var(--border); }
+.value-props { background: var(--white); border-top: 1px solid var(--border); }
 
 .props-grid {
   display: grid;
@@ -1022,9 +1019,9 @@ h1.hero-h1,
 }
 
 @media (max-width: 768px) {
-  .hero-inner          { grid-template-columns: 1fr; }
-  .hero-image          { height: clamp(220px, 55vw, 300px); }
+  .hero                { min-height: clamp(280px, 75vw, 380px); }
   .hero-content        { max-width: 100%; }
+  .hero-bg-img::after  { background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.65) 60%, rgba(255,255,255,0.10) 100%); }
   .welcome-grid        { grid-template-columns: 1fr; }
   .testimonials-grid   { grid-template-columns: 1fr; }
   .contact-inner       { grid-template-columns: 1fr; gap: 2.5rem; }
