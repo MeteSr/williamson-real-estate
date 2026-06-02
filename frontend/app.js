@@ -67,6 +67,9 @@ contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   clearErrors("cerr-", ["name", "phone", "email"]);
 
+  // Honeypot: bots fill hidden fields, humans don't
+  if (document.querySelector('[name="website"]')?.value) return;
+
   const name    = document.getElementById("c-name").value.trim();
   const phone   = document.getElementById("c-phone").value.trim();
   const email   = document.getElementById("c-email").value.trim();
