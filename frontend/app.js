@@ -175,6 +175,22 @@ if (calcSlider) {
   updateCalc();
 }
 
+/* ── Scroll Reveal ───────────────────────────────────────────────────────── */
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.js-reveal').forEach(el => revealObserver.observe(el));
+}
+
 /* ── ICP Canister stub ──────────────────────────────────────────────────────
    Replace with @dfinity/agent + Candid IDL once LEADS_CANISTER_ID is set.
 ────────────────────────────────────────────────────────────────────────── */
