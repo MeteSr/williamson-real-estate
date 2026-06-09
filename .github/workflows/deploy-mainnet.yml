@@ -1,0 +1,44 @@
+name: Deploy Mainnet
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dfx
+        run: |
+          curl -fsSL "https://github.com/dfinity/sdk/releases/download/0.24.3/dfx-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz
+          DFX_BIN=$(find . -name "dfx" -type f -perm /111 | head -1)
+          sudo install -m 755 "$DFX_BIN" /usr/local/bin/dfx
+          dfx --version
+
+      - name: Set up dfx identity
+        run: |
+          echo "$DFX_IDENTITY_PEM" | dfx identity import --storage-mode plaintext ci-deploy -
+          dfx identity use ci-deploy
+        env:
+          DFX_IDENTITY_PEM: ${{ secrets.MAINNET_IDENTITY_PEM }}
+
+      - name: Deploy assets canister to mainnet
+        run: dfx deploy assets --network ic --yes
+
+      - name: Commit canister IDs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add canister_ids.json
+          if git diff --staged --quiet; then
+            echo "canister IDs unchanged"
+          else
+            git commit -m "ops: update canister IDs after mainnet deploy [skip ci]"
+            git push
+          fi

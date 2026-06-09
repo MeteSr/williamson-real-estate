@@ -5,7 +5,8 @@
   "scripts": {
     "start": "dfx start --background",
     "deploy:local": "dfx deploy",
-    "deploy": "dfx deploy --network ic",
+    "deploy:testnet": "dfx deploy --network testnet",
+    "deploy:mainnet": "dfx deploy --network ic",
     "stop": "dfx stop"
   }
 }

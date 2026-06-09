@@ -4,16 +4,16 @@
     "assets": {
       "type": "assets",
       "source": ["frontend/"]
-    },
-    "leads": {
-      "type": "motoko",
-      "main": "backend/leads/main.mo"
     }
   },
   "networks": {
     "local": {
       "bind": "127.0.0.1:4943",
       "type": "ephemeral"
+    },
+    "testnet": {
+      "providers": ["https://ic0.app"],
+      "type": "persistent"
     }
   }
 }
