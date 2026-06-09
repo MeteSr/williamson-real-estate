@@ -31,8 +31,15 @@ jobs:
         env:
           DFX_IDENTITY_PEM: ${{ secrets.DFX_IDENTITY_PEM }}
 
+      - name: Convert ICP to cycles (required for first canister creation)
+        run: dfx cycles convert --amount 0.5 --network testnet || true
+        env:
+          DFX_WARNING: -mainnet_plaintext_identity
+
       - name: Deploy assets canister to testnet
-        run: dfx deploy assets --network testnet --yes
+        run: dfx deploy assets --network testnet --yes --no-wallet
+        env:
+          DFX_WARNING: -mainnet_plaintext_identity
 
       - name: Commit canister IDs
         run: |
