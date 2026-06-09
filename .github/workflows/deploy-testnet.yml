@@ -24,7 +24,9 @@ jobs:
 
       - name: Set up dfx identity
         run: |
-          echo "$DFX_IDENTITY_PEM" | dfx identity import --storage-mode plaintext ci-deploy -
+          echo "$DFX_IDENTITY_PEM" > /tmp/ci-deploy.pem
+          dfx identity import --storage-mode plaintext ci-deploy /tmp/ci-deploy.pem
+          rm /tmp/ci-deploy.pem
           dfx identity use ci-deploy
         env:
           DFX_IDENTITY_PEM: ${{ secrets.DFX_IDENTITY_PEM }}
