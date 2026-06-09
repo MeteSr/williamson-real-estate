@@ -1,5 +1,6 @@
 /* ── Config ──────────────────────────────────────────────────────────────── */
 const LEADS_CANISTER_ID = ""; // set after `dfx deploy --network ic`
+const EMAIL_WORKER_URL  = ""; // set to https://homegentic-email-relay.<account>.workers.dev/send
 
 /* ── UTM Tracking ────────────────────────────────────────────────────────── */
 // Reads ?utm_source=facebook&utm_medium=social&utm_campaign=pelican-bay from
@@ -35,6 +36,16 @@ async function submitLead(payload) {
   if (LEADS_CANISTER_ID) {
     // Replace with @dfinity/agent call once canister ID is known
     await callLeadsCanister(payload);
+  } else if (EMAIL_WORKER_URL) {
+    const res = await fetch(EMAIL_WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `Worker responded ${res.status}`);
+    }
   } else {
     // Mailto fallback — opens mail client with lead data pre-filled
     const lines = [
