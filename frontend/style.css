@@ -1033,6 +1033,76 @@ h1.hero-h1,
   margin: 0;
 }
 
+/* Buy with us toggle */
+.calc-buy-toggle-card {
+  background: #FFFBF7;
+  border: 1px solid #EAE6DF;
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.calc-buy-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  cursor: pointer;
+}
+.calc-buy-toggle-info { flex: 1; }
+.calc-buy-toggle-info strong {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+}
+.calc-buy-toggle-info p {
+  font-size: 0.72rem;
+  color: #6B7280;
+  margin: 0.2rem 0 0;
+}
+.calc-buy-toggle-note {
+  font-size: 0.7rem;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 0.625rem 0 0;
+  padding-top: 0.625rem;
+  border-top: 1px solid #EAE6DF;
+}
+.calc-toggle-switch { flex-shrink: 0; position: relative; }
+.calc-toggle-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.calc-toggle-track {
+  display: block;
+  width: 44px;
+  height: 24px;
+  background: #D1D5DB;
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.2s;
+}
+.calc-toggle-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  transition: transform 0.2s;
+}
+.calc-toggle-switch input:checked + .calc-toggle-track { background: #BF5700; }
+.calc-toggle-switch input:checked + .calc-toggle-track::after { transform: translateX(20px); }
+.calc-toggle-switch input:focus-visible + .calc-toggle-track {
+  outline: 2px solid #BF5700;
+  outline-offset: 2px;
+}
+
 /* ── WHY PELICAN BAY ──────────────────────────────────────────────────────── */
 /* ── Why Pelican Bay — premium redesign ──────────────────────────────────── */
 

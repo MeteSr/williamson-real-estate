@@ -145,9 +145,13 @@ const calcWilliamson  = document.getElementById("calc-williamson");
 const calcSavings     = document.getElementById("calc-savings");
 
 if (calcSlider) {
-  const TRADITIONAL_RATE = 0.03;
-  const WILLIAMSON_RATE  = 0.0125;
-  const THUMB_HALF       = 11; // half of 22px thumb
+  const TRADITIONAL_RATE  = 0.03;
+  const WILLIAMSON_RATE   = 0.0125;
+  const BUY_DISCOUNT      = 1000;
+  const THUMB_HALF        = 11; // half of 22px thumb
+
+  const calcBuyToggle     = document.getElementById("calc-buy-toggle");
+  const calcBuyToggleNote = document.getElementById("calc-buy-toggle-note");
 
   function updateSliderFill() {
     const min = parseInt(calcSlider.min, 10);
@@ -166,8 +170,9 @@ if (calcSlider) {
 
   function updateCalc() {
     const { val, pct } = updateSliderFill();
+    const discount    = calcBuyToggle?.checked ? BUY_DISCOUNT : 0;
     const traditional = Math.round(val * TRADITIONAL_RATE);
-    const williamson  = Math.round(val * WILLIAMSON_RATE);
+    const williamson  = Math.round(val * WILLIAMSON_RATE) - discount;
     const savings     = traditional - williamson;
 
     calcBubble.textContent      = "$" + val.toLocaleString();
@@ -175,6 +180,13 @@ if (calcSlider) {
     calcWilliamson.textContent  = "$" + williamson.toLocaleString();
     calcSavings.textContent     = "$" + savings.toLocaleString();
     positionBubble(pct);
+  }
+
+  if (calcBuyToggle) {
+    calcBuyToggle.addEventListener("change", () => {
+      calcBuyToggleNote.hidden = !calcBuyToggle.checked;
+      updateCalc();
+    });
   }
 
   calcSlider.addEventListener("input", updateCalc);
