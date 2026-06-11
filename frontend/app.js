@@ -114,12 +114,11 @@ contactForm.addEventListener("submit", async (e) => {
       source: "contact",
       utmSource: UTM.source, utmMedium: UTM.medium, utmCampaign: UTM.campaign,
     });
-    if (cMessageRow)    cMessageRow.hidden    = true;
     if (cMessageThanks) cMessageThanks.hidden = false;
-    contactBtn.textContent           = "Sent!";
-    contactBtn.style.background      = "#16a34a";
-    contactBtn.style.borderColor     = "#16a34a";
-    contactBtn.disabled              = true;
+    contactForm.reset();
+    if (cMessageEl) cMessageEl.value = PREFILL_MSG;
+    contactBtn.disabled    = false;
+    contactBtn.textContent = "Contact Us Today";
   } catch (err) {
     console.error("Contact form submission failed:", err);
     contactBtn.disabled    = false;
