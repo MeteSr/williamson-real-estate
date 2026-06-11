@@ -30,13 +30,14 @@ jobs:
         env:
           DFX_IDENTITY_PEM: ${{ secrets.MAINNET_IDENTITY_PEM }}
 
-      - name: Convert ICP to cycles (required for first canister creation)
-        run: dfx cycles convert --amount 0.5 --network ic || true
+      - name: Set cycles wallet
+        run: dfx identity set-wallet "$WALLET_CANISTER_ID" --network ic
         env:
+          WALLET_CANISTER_ID: ${{ secrets.WALLET_CANISTER_ID }}
           DFX_WARNING: -mainnet_plaintext_identity
 
       - name: Deploy assets canister to mainnet
-        run: dfx deploy assets --network ic --yes --no-wallet
+        run: dfx deploy assets --network ic --yes
         env:
           DFX_WARNING: -mainnet_plaintext_identity
 
