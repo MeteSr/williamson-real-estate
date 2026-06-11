@@ -1,6 +1,6 @@
 /* ── Config ──────────────────────────────────────────────────────────────── */
 const LEADS_CANISTER_ID = ""; // set after `dfx deploy --network ic`
-const EMAIL_WORKER_URL  = ""; // set to https://homegentic-email-relay.<account>.workers.dev/send
+const EMAIL_WORKER_URL  = "https://homegentic-email-relay.homegentic.workers.dev/send";
 
 /* ── UTM Tracking ────────────────────────────────────────────────────────── */
 // Reads ?utm_source=facebook&utm_medium=social&utm_campaign=pelican-bay from
