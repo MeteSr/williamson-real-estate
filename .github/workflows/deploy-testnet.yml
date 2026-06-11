@@ -14,38 +14,50 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dfx
-        run: |
-          curl -fsSL "https://github.com/dfinity/sdk/releases/download/0.24.3/dfx-x86_64-unknown-linux-gnu.tar.gz" \
-            | tar -xz
-          DFX_BIN=$(find . -name "dfx" -type f -perm /111 | head -1)
-          sudo install -m 755 "$DFX_BIN" /usr/local/bin/dfx
-          dfx --version
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: Set up dfx identity
+      - name: Install icp-cli
+        run: npm install -g @icp-sdk/icp-cli
+
+      - name: Set up icp identity
         run: |
-          echo "$DFX_IDENTITY_PEM" > /tmp/ci-deploy.pem
-          dfx identity import --storage-mode plaintext ci-deploy /tmp/ci-deploy.pem
-          rm /tmp/ci-deploy.pem
-          dfx identity use ci-deploy
+          IDENTITY_FILE=$(mktemp /tmp/icp-identity-XXXXXX.pem)
+          printf '%s' "$DFX_IDENTITY_PEM" > "$IDENTITY_FILE"
+          icp identity import ci-deploy --from-pem "$IDENTITY_FILE" --storage plaintext
+          icp identity default ci-deploy
+          rm -f "$IDENTITY_FILE"
         env:
           DFX_IDENTITY_PEM: ${{ secrets.DFX_IDENTITY_PEM }}
 
-      - name: Set cycles wallet
-        run: dfx identity set-wallet "$WALLET_CANISTER_ID" --network ic
-        env:
-          WALLET_CANISTER_ID: ${{ secrets.WALLET_CANISTER_ID }}
-          DFX_WARNING: -mainnet_plaintext_identity
+      - name: Seed canister IDs for icp-cli
+        run: |
+          mkdir -p .icp/data/mappings
+          python3 -c "
+          import json, os
+          src = json.load(open('canister_ids.json')) if os.path.exists('canister_ids.json') else {}
+          flat = {k: v['ic'] for k, v in src.items() if isinstance(v, dict) and v.get('ic')}
+          json.dump(flat, open('.icp/data/mappings/ic.ids.json', 'w'), indent=2)
+          print(f'Seeded {len(flat)} canister IDs: {flat}')
+          "
 
-      - name: Deploy assets canister to testnet
-        run: dfx deploy assets --network ic --yes --with-cycles 1000000000000
-        env:
-          DFX_WARNING: -mainnet_plaintext_identity
+      - name: Deploy assets canister
+        run: icp deploy assets -e ic
 
       - name: Commit canister IDs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          python3 -c "
+          import json, os
+          existing = json.load(open('canister_ids.json')) if os.path.exists('canister_ids.json') else {}
+          mappings = '.icp/data/mappings/ic.ids.json'
+          if os.path.exists(mappings):
+              for name, cid in json.load(open(mappings)).items():
+                  existing.setdefault(name, {})['ic'] = cid
+              json.dump(existing, open('canister_ids.json', 'w'), indent=2)
+          "
           git add canister_ids.json
           if git diff --staged --quiet; then
             echo "canister IDs unchanged"

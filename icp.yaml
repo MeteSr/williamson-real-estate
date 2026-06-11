@@ -1,0 +1,11 @@
+canisters:
+  - name: assets
+    recipe:
+      type: "@dfinity/asset-canister@v2.2.1"
+      configuration:
+        dir: frontend
+
+# ic is a reserved built-in network in icp-cli — do not redeclare it
+environments:
+  - name: ic
+    network: ic
