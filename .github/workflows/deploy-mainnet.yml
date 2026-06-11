@@ -37,7 +37,7 @@ jobs:
           DFX_WARNING: -mainnet_plaintext_identity
 
       - name: Deploy assets canister to mainnet
-        run: dfx deploy assets --network ic --yes
+        run: dfx deploy assets --network ic --yes --with-cycles 1000000000000
         env:
           DFX_WARNING: -mainnet_plaintext_identity
 
