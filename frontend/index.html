@@ -763,30 +763,17 @@
           <input id="c-email" name="email" type="email" autocomplete="email" required />
           <span class="field-error" id="cerr-email"></span>
         </div>
-        <div class="form-row">
+        <div class="form-row" id="c-message-row">
           <label for="c-message">Message <span class="opt">(optional)</span></label>
-          <textarea id="c-message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+          <textarea id="c-message" name="message" rows="4"></textarea>
+        </div>
+        <div id="c-message-thanks" class="form-success-inline" hidden>
+          <svg width="16" height="16" viewBox="0 0 20 20" style="display:inline;vertical-align:-2px;margin-right:6px"><circle cx="10" cy="10" r="10" fill="#16a34a"/><polyline points="6,10 9,13 14,7" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Message received! We&rsquo;ll be in touch within one business day.
         </div>
         <button type="submit" class="btn-blue btn-full" id="contact-submit-btn">Contact Us Today</button>
         <p class="form-note">No spam, ever. We&rsquo;ll respond within one business day.</p>
       </form>
-      <div id="contact-success" class="form-success" hidden>
-        <div class="success-check-wrap">
-          <span class="sparkle sp-tl">✦</span>
-          <span class="sparkle sp-tr">✦</span>
-          <span class="sparkle sp-br">✦</span>
-          <span class="sparkle sp-bl">·</span>
-          <div class="success-check-circle">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <path d="M8 20L16 28L32 12" stroke="#1B3A6B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <h3 class="success-heading">Thank You!</h3>
-        <p class="success-sub">Your message has been received.</p>
-        <div class="success-rule"><span>🏠</span></div>
-        <p class="success-body">We&rsquo;ll be in touch within one business day.<br>We appreciate your interest in Pelican Bay.</p>
-      </div>
     </div>
   </section>
 

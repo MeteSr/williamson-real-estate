@@ -70,9 +70,20 @@ async function submitLead(payload) {
 
 /* ── Contact Form ────────────────────────────────────────────────────────── */
 
+const PREFILL_MSG = "Based on the savings calculator, I see that I can save up to 58% on the listing fee by listing with Williamson Real Estate. Please contact me so that we can go over the details.";
+
 const contactForm    = document.getElementById("contact-form");
-const contactSuccess = document.getElementById("contact-success");
 const contactBtn     = document.getElementById("contact-submit-btn");
+const cMessageEl     = document.getElementById("c-message");
+const cMessageRow    = document.getElementById("c-message-row");
+const cMessageThanks = document.getElementById("c-message-thanks");
+
+if (cMessageEl) {
+  cMessageEl.value = PREFILL_MSG;
+  cMessageEl.addEventListener("focus", () => {
+    if (cMessageEl.value === PREFILL_MSG) cMessageEl.value = "";
+  });
+}
 
 contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -81,10 +92,11 @@ contactForm.addEventListener("submit", async (e) => {
   // Honeypot: bots fill hidden fields, humans don't
   if (document.querySelector('[name="website"]')?.value) return;
 
-  const name    = document.getElementById("c-name").value.trim();
-  const phone   = document.getElementById("c-phone").value.trim();
-  const email   = document.getElementById("c-email").value.trim();
-  const message = document.getElementById("c-message").value.trim() || null;
+  const name   = document.getElementById("c-name").value.trim();
+  const phone  = document.getElementById("c-phone").value.trim();
+  const email  = document.getElementById("c-email").value.trim();
+  const rawMsg = cMessageEl?.value.trim() || "";
+  const message = (rawMsg && rawMsg !== PREFILL_MSG) ? rawMsg : null;
 
   let valid = true;
   if (!name)                    { showError("cerr-", "name",  "Name is required");              valid = false; }
@@ -102,15 +114,12 @@ contactForm.addEventListener("submit", async (e) => {
       source: "contact",
       utmSource: UTM.source, utmMedium: UTM.medium, utmCampaign: UTM.campaign,
     });
-    contactForm.hidden    = true;
-    contactSuccess.hidden = false;
-    setTimeout(() => {
-      contactSuccess.hidden = true;
-      contactForm.hidden    = false;
-      contactForm.reset();
-      contactBtn.disabled    = false;
-      contactBtn.textContent = "Contact Us Today";
-    }, 10000);
+    if (cMessageRow)    cMessageRow.hidden    = true;
+    if (cMessageThanks) cMessageThanks.hidden = false;
+    contactBtn.textContent           = "Sent!";
+    contactBtn.style.background      = "#16a34a";
+    contactBtn.style.borderColor     = "#16a34a";
+    contactBtn.disabled              = true;
   } catch (err) {
     console.error("Contact form submission failed:", err);
     contactBtn.disabled    = false;
