@@ -3,7 +3,8 @@
   "canisters": {
     "assets": {
       "type": "assets",
-      "source": ["frontend/"]
+      "source": ["frontend/"],
+      "build": []
     }
   },
   "networks": {
