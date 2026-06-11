@@ -104,6 +104,13 @@ contactForm.addEventListener("submit", async (e) => {
     });
     contactForm.hidden    = true;
     contactSuccess.hidden = false;
+    setTimeout(() => {
+      contactSuccess.hidden = true;
+      contactForm.hidden    = false;
+      contactForm.reset();
+      contactBtn.disabled    = false;
+      contactBtn.textContent = "Contact Us Today";
+    }, 10000);
   } catch (err) {
     console.error("Contact form submission failed:", err);
     contactBtn.disabled    = false;
