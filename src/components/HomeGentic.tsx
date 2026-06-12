@@ -36,8 +36,9 @@ const features = [
 
 export default function HomeGentic() {
   return (
-    <section id="homegentic" className="bg-navy py-24 overflow-hidden">
+    <section id="homegentic" className="bg-white py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-navy rounded-3xl px-8 py-14 lg:px-16 lg:py-16 overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Copy */}
           <motion.div
@@ -81,6 +82,7 @@ export default function HomeGentic() {
             ))}
           </div>
         </div>
+        </div>{/* end container */}
       </div>
     </section>
   )

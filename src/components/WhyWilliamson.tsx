@@ -46,8 +46,9 @@ const cards = [
 
 export default function WhyWilliamson() {
   return (
-    <section id="sell" className="bg-white py-24">
+    <section id="sell" className="bg-white py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gray-50 rounded-3xl px-8 py-14 lg:px-16 lg:py-16">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-teal text-xs font-semibold tracking-widest uppercase mb-3">Why Choose Us</p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-navy leading-tight">
@@ -82,6 +83,7 @@ export default function WhyWilliamson() {
         <div className="text-center mt-12">
           <a href="#contact" className="btn btn-primary">Why It Matters →</a>
         </div>
+        </div>{/* end container */}
       </div>
     </section>
   )
