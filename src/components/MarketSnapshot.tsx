@@ -1,0 +1,48 @@
+'use client'
+import { motion } from 'framer-motion'
+
+const stats = [
+  { label: 'Average Sale Price', value: '$1.98M', change: '+4.4% vs Apr 2024', up: true },
+  { label: 'Average Days on Market', value: '28', change: '-5 days vs Apr 2024', up: true },
+  { label: 'New Listings', value: '42', change: '+1.2% vs Apr 2024', up: true },
+  { label: 'List-to-Sale Ratio', value: '96%', change: '+2% vs Apr 2024', up: true },
+]
+
+export default function MarketSnapshot() {
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h2 className="text-3xl font-extrabold text-navy">Pelican Bay Market Snapshot</h2>
+          <p className="text-gray-400 text-sm mt-1">Update for May 2025</p>
+        </div>
+        <a href="#contact" className="text-teal text-sm font-semibold hover:underline">View Full Report →</a>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        {stats.map((s, i) => (
+          <motion.div
+            key={s.label}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="bg-white border border-gray-100 rounded-2xl p-5 shadow-card"
+          >
+            <p className="text-gray-400 text-xs mb-2">{s.label}</p>
+            <p className="text-3xl font-extrabold text-navy mb-1">{s.value}</p>
+            <p className={`text-xs font-medium ${s.up ? 'text-teal' : 'text-coral'}`}>{s.change}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="mt-6 bg-navy rounded-2xl p-5 text-center">
+        <p className="text-white/70 text-sm mb-1">Thinking about selling?</p>
+        <p className="text-white font-bold text-lg mb-4">Get a free home valuation</p>
+        <a href="#contact" className="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-colors">
+          Get My Home Value
+        </a>
+      </div>
+    </div>
+  )
+}

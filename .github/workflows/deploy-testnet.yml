@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install dependencies & build
+        run: npm ci && npm run build
+
       - name: Install icp-cli
         run: npm install -g @icp-sdk/icp-cli
 

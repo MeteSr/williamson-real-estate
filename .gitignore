@@ -1,4 +1,7 @@
 .dfx/
 node_modules/
 dist/
+out/
+.next/
 .env
+next-env.d.ts
