@@ -8,6 +8,126 @@ html { scroll-behavior: smooth; }
 
 body { font-family: 'Inter', system-ui, sans-serif; }
 
+@layer components {
+  /* ── Base ──────────────────────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border-radius: 14px;
+    min-height: 52px;
+    padding: 0 28px;
+    transition: background-color 250ms ease, color 250ms ease,
+                transform 250ms ease, box-shadow 250ms ease,
+                border-color 250ms ease, opacity 250ms ease;
+    outline: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .btn:active:not(:disabled) { transform: scale(0.98) !important; }
+  .btn:focus-visible { outline: 2px solid #00CEC8; outline-offset: 3px; }
+
+  /* Compact variant for nav / tight contexts */
+  .btn-sm {
+    min-height: 40px;
+    padding: 0 20px;
+    font-size: 0.875rem;
+    border-radius: 12px;
+  }
+
+  /* ── Primary — teal ────────────────────────────────────────────────────── */
+  .btn-primary {
+    background-color: #00CEC8;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 206, 200, 0.30);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: #00A8A3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 206, 200, 0.45);
+  }
+
+  /* ── High-priority CTA — orange ────────────────────────────────────────── */
+  .btn-cta {
+    background-color: #EB4203;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(235, 66, 3, 0.40);
+  }
+  .btn-cta:hover:not(:disabled) {
+    background-color: #C23502;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(235, 66, 3, 0.50);
+  }
+
+  /* ── Secondary — white / teal border ──────────────────────────────────── */
+  .btn-secondary {
+    background-color: #ffffff;
+    color: #00CEC8;
+    border-color: #00CEC8;
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background-color: #00CEC8;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 206, 200, 0.30);
+  }
+
+  /* ── Ghost — transparent / white border (dark/image backgrounds) ───────── */
+  .btn-ghost {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(4px);
+  }
+  .btn-ghost:hover:not(:disabled) {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* ── Solid white — for gradient/dark section backgrounds ──────────────── */
+  .btn-white {
+    background-color: #ffffff;
+    color: #00A8A3;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+  }
+  .btn-white:hover:not(:disabled) {
+    background-color: #f0fdfc;
+    color: #007D79;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  /* ── Gradient — teal→coral (hero / final CTA) ─────────────────────────── */
+  .btn-gradient {
+    background: linear-gradient(135deg, #00CEC8 0%, #FF9C5F 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 206, 200, 0.25),
+                0 4px 20px rgba(255, 156, 95, 0.20);
+  }
+  .btn-gradient:hover:not(:disabled) {
+    transform: translateY(-2px);
+    color: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 206, 200, 0.35),
+                0 8px 32px rgba(255, 156, 95, 0.30);
+  }
+}
+
 @layer utilities {
   .text-balance { text-wrap: balance; }
 }

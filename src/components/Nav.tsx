@@ -55,10 +55,7 @@ export default function Nav() {
             <PhoneIcon />
             (239) 248-0900
           </a>
-          <a
-            href="#contact"
-            className="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
-          >
+          <a href="#contact" className="btn btn-sm btn-cta">
             Get Home Value
           </a>
         </div>
@@ -89,7 +86,7 @@ export default function Nav() {
                 {l}
               </a>
             ))}
-            <a href="#contact" className="mt-2 bg-brand text-white text-center py-2.5 rounded-full font-semibold" onClick={() => setOpen(false)}>
+            <a href="#contact" className="btn btn-cta w-full mt-2" onClick={() => setOpen(false)}>
               Get Home Value
             </a>
           </motion.div>

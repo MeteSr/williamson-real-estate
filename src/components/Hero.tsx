@@ -50,18 +50,8 @@ export default function Hero() {
             Keep more of your equity where it belongs—with you.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
-              href="#contact"
-              className="bg-teal hover:bg-teal-dark text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors shadow-lg"
-            >
-              See My Savings
-            </a>
-            <a
-              href="#contact"
-              className="border border-white/50 hover:border-white text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors backdrop-blur-sm"
-            >
-              Book a Home Valuation
-            </a>
+            <a href="#contact" className="btn btn-primary">See My Savings</a>
+            <a href="#contact" className="btn btn-ghost">Book a Home Valuation</a>
           </div>
         </motion.div>
 
@@ -109,12 +99,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <a
-            href="#contact"
-            className="block w-full bg-brand hover:bg-brand-dark text-white text-center font-semibold py-3 rounded-full text-sm transition-colors"
-          >
-            Calculate My Savings →
-          </a>
+          <a href="#contact" className="btn btn-cta w-full">Calculate My Savings →</a>
         </motion.div>
       </div>
     </section>

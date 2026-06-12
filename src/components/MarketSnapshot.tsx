@@ -39,9 +39,7 @@ export default function MarketSnapshot() {
       <div className="mt-6 bg-navy rounded-2xl p-5 text-center">
         <p className="text-white/70 text-sm mb-1">Thinking about selling?</p>
         <p className="text-white font-bold text-lg mb-4">Get a free home valuation</p>
-        <a href="#contact" className="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-colors">
-          Get My Home Value
-        </a>
+        <a href="#contact" className="btn btn-sm btn-primary">Get My Home Value</a>
       </div>
     </div>
   )

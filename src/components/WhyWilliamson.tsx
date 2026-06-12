@@ -3,28 +3,44 @@ import { motion } from 'framer-motion'
 
 const cards = [
   {
-    icon: '📸',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+      </svg>
+    ),
     title: 'Full-Service Marketing',
     desc: 'Professional photos, video, staging guidance, and targeted digital exposure to attract premium buyers.',
-    color: 'bg-teal/10 text-teal',
+    iconBg: 'bg-teal/10 text-teal',
   },
   {
-    icon: '💰',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+    ),
     title: 'Unbeatable Savings',
     desc: 'Lower commission means bigger results. More in your pocket—without compromising service.',
-    color: 'bg-coral/20 text-coral',
+    iconBg: 'bg-coral/15 text-coral',
   },
   {
-    icon: '🏠',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
     title: 'HomeGentic Advantage',
     desc: 'Blockchain-verified history, maintenance tracking, and AI-powered insights that build buyer confidence.',
-    color: 'bg-cream text-brand',
+    iconBg: 'bg-brand/10 text-brand',
   },
   {
-    icon: '📍',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+    ),
     title: 'Local Expertise',
     desc: 'Pelican Bay specialists with deep market knowledge, HOA experience, and community relationships.',
-    color: 'bg-navy/10 text-navy',
+    iconBg: 'bg-navy/10 text-navy',
   },
 ]
 
@@ -53,9 +69,10 @@ export default function WhyWilliamson() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="bg-white border border-gray-100 rounded-2xl p-6 shadow-card hover:shadow-lg transition-shadow"
             >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5 ${c.color}`}>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${c.iconBg}`}>
                 {c.icon}
               </div>
+
               <h3 className="font-bold text-navy text-lg mb-2">{c.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
             </motion.div>
@@ -63,9 +80,7 @@ export default function WhyWilliamson() {
         </div>
 
         <div className="text-center mt-12">
-          <a href="#contact" className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-colors">
-            Why It Matters →
-          </a>
+          <a href="#contact" className="btn btn-primary">Why It Matters →</a>
         </div>
       </div>
     </section>

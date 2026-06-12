@@ -25,18 +25,8 @@ export default function FinalCTA() {
             Join hundreds of Pelican Bay homeowners who've trusted Williamson Real Estate for a smarter, more profitable sale.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="#contact"
-              className="bg-white text-teal-dark font-bold px-8 py-4 rounded-full text-sm hover:bg-white/90 transition-colors shadow-lg"
-            >
-              Get Home Value
-            </a>
-            <a
-              href="#contact"
-              className="border-2 border-white text-white font-bold px-8 py-4 rounded-full text-sm hover:bg-white/10 transition-colors"
-            >
-              Schedule Consultation
-            </a>
+            <a href="#contact" className="btn btn-white">Get Home Value</a>
+            <a href="#contact" className="btn btn-ghost">Schedule Consultation</a>
           </div>
         </motion.div>
       </div>
