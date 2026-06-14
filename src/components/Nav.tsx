@@ -49,11 +49,11 @@ export default function Nav() {
         {/* Right */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:+12392480900"
+            href="tel:+13868527207"
             className={`text-sm font-medium flex items-center gap-1.5 ${scrolled ? 'text-gray-700' : 'text-white'}`}
           >
             <PhoneIcon />
-            (239) 248-0900
+            (386) 852-7207
           </a>
           <a href="#contact" className="btn btn-sm btn-cta">
             Get Home Value
