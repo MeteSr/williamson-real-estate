@@ -3,18 +3,20 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-const TRADITIONAL = 0.03
-const WILLIAMSON  = 0.0125
+const TRADITIONAL   = 0.03
+const WILLIAMSON    = 0.0125
+const BUY_DISCOUNT  = 1000
 
 function fmt(n: number) {
   return '$' + Math.round(n).toLocaleString()
 }
 
 export default function Hero() {
-  const [price, setPrice] = useState(1250000)
+  const [price, setPrice]       = useState(1250000)
+  const [buyToggle, setBuyToggle] = useState(false)
 
   const traditional = price * TRADITIONAL
-  const williamson  = price * WILLIAMSON
+  const williamson  = price * WILLIAMSON - (buyToggle ? BUY_DISCOUNT : 0)
   const savings     = traditional - williamson
 
   return (
@@ -88,9 +90,12 @@ export default function Hero() {
           </div>
 
           {/* Comparison rows */}
-          <div className="space-y-3 mb-6">
+          <div className="space-y-3 mb-5">
             <CalcRow label="Traditional Commission (3%)" value={fmt(traditional)} muted />
-            <CalcRow label="Williamson Real Estate (1.25%)" value={fmt(williamson)} accent />
+            <CalcRow label="Williamson Real Estate (1.25%)" value={fmt(price * WILLIAMSON)} accent />
+            {buyToggle && (
+              <CalcRow label="Buy with Us Discount" value={`−$${BUY_DISCOUNT.toLocaleString()}`} discount />
+            )}
             <div className="border-t border-gray-100 pt-3">
               <div className="flex justify-between items-center bg-teal/10 rounded-xl px-4 py-3">
                 <span className="text-sm font-bold text-navy">You Save</span>
@@ -99,6 +104,29 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* Buy-with-us toggle */}
+          <label className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-3 mb-5 cursor-pointer select-none">
+            <div className="relative mt-0.5 shrink-0">
+              <input
+                type="checkbox"
+                checked={buyToggle}
+                onChange={e => setBuyToggle(e.target.checked)}
+                className="sr-only"
+              />
+              <div className={`w-9 h-5 rounded-full transition-colors duration-200 ${buyToggle ? 'bg-teal' : 'bg-gray-300'}`} />
+              <div className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform duration-200 ${buyToggle ? 'translate-x-4' : 'translate-x-0'}`} />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-navy leading-tight">Buy with Us — Save an Extra $1,000</p>
+              <p className="text-xs text-gray-500 mt-0.5">Use us as your buying agent on your next purchase.</p>
+              {buyToggle && (
+                <p className="text-xs text-gray-400 mt-1.5 leading-snug">
+                  *Applied at closing. Requires a signed buyer&apos;s representation agreement.
+                </p>
+              )}
+            </div>
+          </label>
+
           <a href="#contact" className="btn btn-cta w-full">Calculate My Savings →</a>
         </motion.div>
       </div>
@@ -106,11 +134,11 @@ export default function Hero() {
   )
 }
 
-function CalcRow({ label, value, muted, accent }: { label: string; value: string; muted?: boolean; accent?: boolean }) {
+function CalcRow({ label, value, muted, accent, discount }: { label: string; value: string; muted?: boolean; accent?: boolean; discount?: boolean }) {
   return (
     <div className="flex justify-between items-center">
       <span className={`text-sm ${muted ? 'text-gray-500' : 'text-gray-700 font-medium'}`}>{label}</span>
-      <span className={`font-semibold ${accent ? 'text-teal' : 'text-gray-700'}`}>{value}</span>
+      <span className={`font-semibold ${accent ? 'text-teal' : discount ? 'text-teal' : 'text-gray-700'}`}>{value}</span>
     </div>
   )
 }
