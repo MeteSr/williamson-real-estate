@@ -119,11 +119,6 @@ export default function Hero() {
             <div>
               <p className="text-sm font-semibold text-navy leading-tight">Buy with Us — Save an Extra $1,000</p>
               <p className="text-xs text-gray-500 mt-0.5">Use us as your buying agent on your next purchase.</p>
-              {buyToggle && (
-                <p className="text-xs text-gray-400 mt-1.5 leading-snug">
-                  *Applied at closing. Requires a signed buyer&apos;s representation agreement.
-                </p>
-              )}
             </div>
           </label>
 
