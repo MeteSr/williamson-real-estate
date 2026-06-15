@@ -6,7 +6,7 @@ export default function FinalCTA() {
     <section className="bg-white py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl px-8 py-16 lg:px-20 lg:py-20 text-center"
-          style={{ background: 'linear-gradient(135deg, #00CEC8 0%, #FF9C5F 100%)' }}
+          style={{ background: '#EB4203' }}
         >
           {/* Subtle dot texture */}
           <div className="absolute inset-0 opacity-10 pointer-events-none"
@@ -20,7 +20,6 @@ export default function FinalCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-white/80 text-sm font-semibold tracking-widest uppercase mb-4">Ready to Get Started?</p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
               Ready To See What<br className="hidden sm:block" /> Your Home Is Worth?
             </h2>
