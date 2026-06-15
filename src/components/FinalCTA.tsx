@@ -16,7 +16,7 @@ export default function FinalCTA() {
               Ready To See What<br className="hidden sm:block" /> Your Home Is Worth?
             </h2>
             <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
-              Join hundreds of Pelican Bay homeowners who've trusted Williamson Real Estate for a smarter, more profitable sale.
+              Join other Pelican Bay homeowners who've trusted Williamson Real Estate for a smarter, more profitable sale.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="#contact" className="btn btn-primary">Get Home Value</a>
