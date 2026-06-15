@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        teal:   { DEFAULT: '#00CEC8', dark: '#00A8A3', light: '#E0FAF9' },
+        teal:   { DEFAULT: '#0D2149', dark: '#081833', light: '#E8EBF2' },
         cream:  '#FCEFC3',
         coral:  '#BF5700',
         brand:  { DEFAULT: '#BF5700', dark: '#9A4500' },

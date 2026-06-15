@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Footer() {
   return (
     <footer className="bg-navy text-white pt-16 pb-24 sm:pb-8">
@@ -8,7 +6,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/williamson_realestate_logo.png" alt="Williamson Real Estate" width={32} height={48} className="h-8 w-auto brightness-0 invert" />
+              <span className="font-extrabold text-2xl leading-none text-[#BF5700]" style={{ fontFamily: 'Georgia, serif', letterSpacing: '-0.02em' }}>W</span>
               <div className="leading-tight">
                 <div className="text-sm font-extrabold tracking-tight">WILLIAMSON</div>
                 <div className="text-[10px] text-white/50 tracking-widest uppercase">Real Estate</div>

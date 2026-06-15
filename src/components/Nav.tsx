@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const links = ['Sell', 'Buy', 'Neighborhoods', 'HomeGentic', 'Resources', 'About']
@@ -24,7 +23,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2.5">
-          <Image src="/williamson_realestate_logo.png" alt="Williamson Real Estate" width={32} height={48} className="h-8 w-auto" />
+          <span className="font-extrabold text-2xl leading-none text-[#BF5700]" style={{ fontFamily: 'Georgia, serif', letterSpacing: '-0.02em' }}>W</span>
           <div className="leading-tight">
             <div className={`text-sm font-800 tracking-tight ${scrolled ? 'text-navy' : 'text-white'}`}>WILLIAMSON</div>
             <div className={`text-[10px] font-500 tracking-widest uppercase ${scrolled ? 'text-gray-500' : 'text-white/70'}`}>Real Estate</div>

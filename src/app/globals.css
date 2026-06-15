@@ -37,7 +37,7 @@ body { font-family: 'Inter', system-ui, sans-serif; }
     box-shadow: none !important;
   }
   .btn:active:not(:disabled) { transform: scale(0.98) !important; }
-  .btn:focus-visible { outline: 2px solid #00CEC8; outline-offset: 3px; }
+  .btn:focus-visible { outline: 2px solid #0D2149; outline-offset: 3px; }
 
   /* Compact variant for nav / tight contexts */
   .btn-sm {
@@ -49,15 +49,15 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
   /* ── Primary — teal ────────────────────────────────────────────────────── */
   .btn-primary {
-    background-color: #00CEC8;
+    background-color: #0D2149;
     color: #ffffff;
-    box-shadow: 0 4px 16px rgba(0, 206, 200, 0.30);
+    box-shadow: 0 4px 16px rgba(13, 33, 73, 0.30);
   }
   .btn-primary:hover:not(:disabled) {
-    background-color: #00A8A3;
+    background-color: #081833;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 206, 200, 0.45);
+    box-shadow: 0 8px 24px rgba(13, 33, 73, 0.45);
   }
 
   /* ── High-priority CTA — orange ────────────────────────────────────────── */
@@ -76,14 +76,14 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   /* ── Secondary — white / teal border ──────────────────────────────────── */
   .btn-secondary {
     background-color: #ffffff;
-    color: #00CEC8;
-    border-color: #00CEC8;
+    color: #0D2149;
+    border-color: #0D2149;
   }
   .btn-secondary:hover:not(:disabled) {
-    background-color: #00CEC8;
+    background-color: #0D2149;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 206, 200, 0.30);
+    box-shadow: 0 6px 20px rgba(13, 33, 73, 0.30);
   }
 
   /* ── Ghost — transparent / white border (dark/image backgrounds) ───────── */
@@ -103,27 +103,27 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   /* ── Solid white — for gradient/dark section backgrounds ──────────────── */
   .btn-white {
     background-color: #ffffff;
-    color: #00A8A3;
+    color: #0D2149;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
   }
   .btn-white:hover:not(:disabled) {
-    background-color: #f0fdfc;
-    color: #007D79;
+    background-color: #f0f2f7;
+    color: #081833;
     transform: translateY(-2px);
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
   }
 
   /* ── Gradient — teal→coral (hero / final CTA) ─────────────────────────── */
   .btn-gradient {
-    background: linear-gradient(135deg, #00CEC8 0%, #BF5700 100%);
+    background: linear-gradient(135deg, #0D2149 0%, #BF5700 100%);
     color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 206, 200, 0.25),
+    box-shadow: 0 4px 20px rgba(13, 33, 73, 0.25),
                 0 4px 20px rgba(191, 87, 0, 0.20);
   }
   .btn-gradient:hover:not(:disabled) {
     transform: translateY(-2px);
     color: #ffffff;
-    box-shadow: 0 8px 32px rgba(0, 206, 200, 0.35),
+    box-shadow: 0 8px 32px rgba(13, 33, 73, 0.35),
                 0 8px 32px rgba(191, 87, 0, 0.30);
   }
 }
