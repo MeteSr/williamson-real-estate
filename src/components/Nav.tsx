@@ -65,9 +65,7 @@ export default function Nav() {
           aria-label="Toggle menu"
           onClick={() => setOpen(o => !o)}
         >
-          <span className={`block w-5 h-0.5 mb-1 transition-colors ${scrolled ? 'bg-navy' : 'bg-white'}`} />
-          <span className={`block w-5 h-0.5 mb-1 transition-colors ${scrolled ? 'bg-navy' : 'bg-white'}`} />
-          <span className={`block w-5 h-0.5 transition-colors ${scrolled ? 'bg-navy' : 'bg-white'}`} />
+          <span className="font-extrabold text-2xl leading-none text-[#BF5700]" style={{ fontFamily: 'Georgia, serif', letterSpacing: '-0.02em' }}>W</span>
         </button>
       </div>
 
