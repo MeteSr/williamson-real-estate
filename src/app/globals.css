@@ -62,15 +62,15 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
   /* ── High-priority CTA — orange ────────────────────────────────────────── */
   .btn-cta {
-    background-color: #EB4203;
+    background-color: #BF5700;
     color: #ffffff;
-    box-shadow: 0 4px 16px rgba(235, 66, 3, 0.40);
+    box-shadow: 0 4px 16px rgba(191, 87, 0, 0.40);
   }
   .btn-cta:hover:not(:disabled) {
-    background-color: #C23502;
+    background-color: #9A4500;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(235, 66, 3, 0.50);
+    box-shadow: 0 8px 28px rgba(191, 87, 0, 0.50);
   }
 
   /* ── Secondary — white / teal border ──────────────────────────────────── */
@@ -115,16 +115,16 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 
   /* ── Gradient — teal→coral (hero / final CTA) ─────────────────────────── */
   .btn-gradient {
-    background: linear-gradient(135deg, #00CEC8 0%, #FF9C5F 100%);
+    background: linear-gradient(135deg, #00CEC8 0%, #BF5700 100%);
     color: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 206, 200, 0.25),
-                0 4px 20px rgba(255, 156, 95, 0.20);
+                0 4px 20px rgba(191, 87, 0, 0.20);
   }
   .btn-gradient:hover:not(:disabled) {
     transform: translateY(-2px);
     color: #ffffff;
     box-shadow: 0 8px 32px rgba(0, 206, 200, 0.35),
-                0 8px 32px rgba(255, 156, 95, 0.30);
+                0 8px 32px rgba(191, 87, 0, 0.30);
   }
 }
 

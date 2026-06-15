@@ -7,8 +7,8 @@ const config: Config = {
       colors: {
         teal:   { DEFAULT: '#00CEC8', dark: '#00A8A3', light: '#E0FAF9' },
         cream:  '#FCEFC3',
-        coral:  '#FF9C5F',
-        brand:  { DEFAULT: '#EB4203', dark: '#C23502' },
+        coral:  '#BF5700',
+        brand:  { DEFAULT: '#BF5700', dark: '#9A4500' },
         navy:   '#0D2149',
       },
       fontFamily: {
