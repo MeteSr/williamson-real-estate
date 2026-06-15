@@ -141,7 +141,7 @@ export default function Hero() {
             </div>
           </label>
 
-          <a href="#contact" className="btn btn-cta w-full">Calculate My Savings →</a>
+          <a href="#contact" className="btn btn-cta w-full">Secure My Savings →</a>
         </motion.div>
       </div>
     </section>
