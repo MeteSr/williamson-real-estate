@@ -14,8 +14,7 @@ export default function Contact() {
   const [name, setName]       = useState('')
   const [phone, setPhone]     = useState('')
   const [email, setEmail]     = useState('')
-  const [message, setMessage] = useState(PREFILL_MSG)
-  const [prefillActive, setPrefillActive] = useState(true)
+  const [message, setMessage] = useState('')
   const [errors, setErrors]   = useState<Partial<Record<Field, string>>>({})
   const [status, setStatus]   = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
@@ -35,7 +34,7 @@ export default function Contact() {
     if (Object.keys(e).length) return
 
     setStatus('sending')
-    const msgPayload = (message.trim() && message !== PREFILL_MSG) ? message.trim() : null
+    const msgPayload = message.trim() || null
 
     try {
       const res = await fetch(EMAIL_WORKER_URL, {
@@ -45,7 +44,7 @@ export default function Contact() {
       })
       if (!res.ok) throw new Error()
       setStatus('sent')
-      setName(''); setPhone(''); setEmail(''); setMessage(PREFILL_MSG); setPrefillActive(true)
+      setName(''); setPhone(''); setEmail(''); setMessage('')
     } catch {
       setStatus('error')
       setTimeout(() => setStatus('idle'), 4000)
@@ -118,8 +117,8 @@ export default function Contact() {
             <textarea
               rows={4}
               value={message}
-              onFocus={() => { if (prefillActive) { setMessage(''); setPrefillActive(false) } }}
               onChange={e => setMessage(e.target.value)}
+              placeholder={PREFILL_MSG}
               className={`${input(false)} resize-none`}
             />
           </Field>
