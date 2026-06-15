@@ -81,7 +81,7 @@ export default function WhyWilliamson() {
         </div>
 
         <div className="text-center mt-12">
-          <a href="#contact" className="btn btn-primary">Why It Matters →</a>
+          <a href="#contact" className="btn btn-primary">Get in Touch →</a>
         </div>
         </div>{/* end container */}
       </div>
