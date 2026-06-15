@@ -75,7 +75,7 @@ export default function HomeGentic() {
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="bg-white/10 hover:bg-white/15 border border-white/10 rounded-2xl p-5 transition-colors"
               >
-                <div className="mb-3 text-teal/80">{f.icon}</div>
+                <div className="mb-3 text-white/80">{f.icon}</div>
                 <h3 className="text-white font-semibold text-sm mb-1">{f.title}</h3>
                 <p className="text-white/60 text-xs leading-relaxed">{f.desc}</p>
               </motion.div>

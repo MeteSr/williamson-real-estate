@@ -139,9 +139,6 @@ export default function Hero() {
               <p className="text-sm font-semibold text-navy leading-tight">Buy with Us — Save an Extra $1,000</p>
               <p className="text-xs text-gray-500 mt-0.5">Use us as your buying agent on your next purchase.</p>
             </div>
-            <svg className="shrink-0 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
           </label>
 
           <a href="#contact" className="btn btn-cta w-full">Calculate My Savings →</a>
