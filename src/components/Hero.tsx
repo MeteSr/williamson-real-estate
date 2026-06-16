@@ -44,12 +44,11 @@ export default function Hero() {
             Pelican Bay Real Estate Specialists
           </p>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-white leading-[1.08] mb-6">
-            Sell Your Pelican Bay Home{' '}
-            <span className="text-coral">For Less.</span>
+            Sell Your Pelican Bay Home and{' '}
+            <span className="text-coral">Keep More of Your Equity</span>
           </h1>
           <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-lg">
-            Full-service marketing, expert negotiation, and unbeatable savings.
-            Keep more of your equity where it belongs—with you.
+            Full-service representation with lower commission and local expertise you can trust.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="#contact" className="btn btn-primary">See My Savings</a>
