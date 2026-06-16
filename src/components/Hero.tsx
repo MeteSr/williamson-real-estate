@@ -54,6 +54,20 @@ export default function Hero() {
             <a href="#contact" className="btn btn-primary">See My Savings</a>
             <a href="#contact" className="btn btn-ghost">Book a Home Valuation</a>
           </div>
+
+          {/* Resident trust card */}
+          <div className="mt-6 flex items-start gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-4 max-w-lg">
+            <div className="shrink-0 mt-0.5">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8845C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div>
+              <p className="text-white text-xs font-bold uppercase tracking-widest mb-1">I'm a Proud Pelican Bay Resident</p>
+              <p className="text-white/75 text-sm leading-snug">I live, work, and serve in the community I call home.</p>
+              <p className="text-white/90 text-2xl italic mt-2" style={{ fontFamily: "'Dancing Script', cursive" }}>— Demetrius L. Williamson</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Floating calculator card */}
