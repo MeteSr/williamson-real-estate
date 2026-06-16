@@ -41,7 +41,7 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
         >
           <p className="text-white text-sm font-semibold tracking-widest uppercase mb-4">
-            Pelican Bay Real Estate Specialists
+            The Pelican Bay Selling Expert
           </p>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-white leading-[1.08] mb-6">
             Sell Your Pelican Bay Home and{' '}

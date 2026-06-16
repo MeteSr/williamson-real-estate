@@ -50,10 +50,8 @@ export default function WhyWilliamson() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gray-50 rounded-3xl px-8 py-14 lg:px-16 lg:py-16">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-teal text-xs font-semibold tracking-widest uppercase mb-3">Why Pelican Bay Owners Choose Us</p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-navy leading-tight">
-            More Than a Listing.{' '}
-            <span className="text-teal">A Smarter Way To Sell.</span>
+            Why Pelican Bay Owners Choose Us
           </h2>
           <p className="mt-4 text-gray-500 text-lg">
             We combine expert real estate services with HomeGentic technology to give your property a competitive advantage.
