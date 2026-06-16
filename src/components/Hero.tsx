@@ -67,7 +67,7 @@ export default function Hero() {
               <p className="text-white/75 text-sm leading-snug">I live, work, and serve in the community I call home.</p>
               <p className="text-white/90 mt-2">
                 <span className="text-2xl italic" style={{ fontFamily: "'Dancing Script', cursive" }}>— Demetrius L. Williamson</span>
-                <span className="text-sm font-medium not-italic ml-1" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>, Broker</span>
+                <span className="text-sm font-medium not-italic" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>, Managing Broker</span>
               </p>
             </div>
           </div>
