@@ -635,6 +635,66 @@ h1.hero-h1,
 }
 .prop-link:hover { text-decoration: underline; }
 
+/* ── TESTIMONIALS ────────────────────────────────────────────────────────── */
+.reviews-section { background: var(--green-light); border-top: 1px solid var(--border); }
+
+.reviews-sub { max-width: 480px; margin: 0 auto 3rem; text-align: center; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+.review-stars svg { fill: var(--blue); }
+
+.review-quote {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.review-name  { font-size: 0.875rem; font-weight: 600; color: var(--dark); }
+.review-role  { font-size: 0.78rem;  color: var(--gray-500); margin-top: 1px; }
+
+@media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+
 /* ── SAVINGS CALCULATOR ───────────────────────────────────────────────────── */
 .calc-section {
   background: linear-gradient(135deg, #06102A 0%, #0D2149 60%, #1B3A6B 100%);
