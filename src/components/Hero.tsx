@@ -65,7 +65,10 @@ export default function Hero() {
             <div>
               <p className="text-white text-xs font-bold uppercase tracking-widest mb-1">I'm a Proud Pelican Bay Resident</p>
               <p className="text-white/75 text-sm leading-snug">I live, work, and serve in the community I call home.</p>
-              <p className="text-white/90 text-2xl italic mt-2" style={{ fontFamily: "'Dancing Script', cursive" }}>— Demetrius L. Williamson</p>
+              <p className="text-white/90 mt-2">
+                <span className="text-2xl italic" style={{ fontFamily: "'Dancing Script', cursive" }}>— Demetrius L. Williamson</span>
+                <span className="text-sm font-medium not-italic ml-1" style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>, Broker</span>
+              </p>
             </div>
           </div>
         </motion.div>
