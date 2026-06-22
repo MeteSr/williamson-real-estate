@@ -1476,6 +1476,78 @@ h1.hero-h1,
   pointer-events: none;
 }
 
+/* ── MARKET SNAPSHOT ─────────────────────────────────────────────────────── */
+.market-snapshot { background: #F8F9FB; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.ms-header { margin-bottom: 2.5rem; }
+.ms-sub { max-width: 440px; margin: 0.5rem auto 0; font-size: 0.9375rem; color: var(--gray-500); }
+
+.ms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.ms-stat {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.ms-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--blue);
+}
+
+.ms-val {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.ms-lbl {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+}
+
+.ms-delta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 100px;
+}
+.ms-delta--down { color: #DC2626; background: #FEF2F2; }
+.ms-delta--up   { color: #16A34A; background: #F0FDF4; }
+
+.ms-source {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--gray-500);
+}
+.ms-source a { color: var(--blue); font-weight: 600; }
+.ms-source a:hover { text-decoration: underline; }
+
 /* ── CTA BANNER ──────────────────────────────────────────────────────────── */
 .cta-banner { background: var(--gray-100); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -1878,6 +1950,7 @@ h1.hero-h1,
   .welcome-photo-wrap { display: flex; flex-direction: column; }
   .hg-inner       { grid-template-columns: 1fr; gap: 2.5rem; }
   .hg-offer-card  { position: static; }
+  .ms-grid        { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1929,6 +2002,7 @@ h1.hero-h1,
   .nav-burger { display: flex; }
   .nav-right .nav-phone .nav-phone-text { display: none; }
   .nav-right .nav-phone { min-width: 44px; min-height: 44px; justify-content: center; }
+  .nav-right .btn-blue { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -1939,4 +2013,5 @@ h1.hero-h1,
   .cta-actions  { flex-direction: column; width: 100%; }
   .cta-actions .btn-blue,
   .cta-actions .btn-outline-blue-sm { justify-content: center; }
+  .ms-grid       { grid-template-columns: repeat(2, 1fr); }
 }
