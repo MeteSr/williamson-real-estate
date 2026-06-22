@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { MARKET } from '@/lib/marketData'
 
 const TRADITIONAL   = 0.03
 const WILLIAMSON    = 0.0125
@@ -12,7 +13,8 @@ function fmt(n: number) {
 }
 
 export default function Hero() {
-  const [price, setPrice]       = useState(300000)
+  const STEP = 25000
+  const [price, setPrice] = useState(Math.round(MARKET.medianListPrice / STEP) * STEP)
   const [buyToggle, setBuyToggle] = useState(false)
 
   const traditional = price * TRADITIONAL

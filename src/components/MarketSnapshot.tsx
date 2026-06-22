@@ -1,11 +1,12 @@
 'use client'
 import { motion } from 'framer-motion'
+import { MARKET } from '@/lib/marketData'
 
 const stats = [
-  { label: 'Active Listings', value: '34' },
-  { label: 'Median Sale Price', value: '$280K', note: '▼ 3% YoY' },
-  { label: 'Median List Price', value: '$309K' },
-  { label: 'Avg Days on Market', value: '113' },
+  { label: 'Active Listings',    value: String(MARKET.activeListings) },
+  { label: 'Median Sale Price',  value: `$${(MARKET.medianSalePrice / 1000).toFixed(0)}K`, note: `▼ ${Math.abs(MARKET.yoyChangePct)}% YoY` },
+  { label: 'Median List Price',  value: `$${(MARKET.medianListPrice / 1000).toFixed(0)}K` },
+  { label: 'Avg Days on Market', value: String(MARKET.avgDaysOnMarket) },
 ]
 
 export default function MarketSnapshot() {
@@ -18,7 +19,7 @@ export default function MarketSnapshot() {
             <div>
               <p className="text-teal text-xs font-semibold tracking-widest uppercase mb-2">Market Data</p>
               <h2 className="text-3xl font-extrabold text-navy">Pelican Bay Market Snapshot</h2>
-              <p className="text-gray-400 text-sm mt-1">Updated June 2026 · Source: Redfin</p>
+              <p className="text-gray-400 text-sm mt-1">Updated {MARKET.asOf} · Source: Redfin</p>
             </div>
             <a href="#contact" className="text-teal text-sm font-semibold hover:underline hidden sm:block">View Full Report →</a>
           </div>
