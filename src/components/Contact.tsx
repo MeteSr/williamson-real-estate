@@ -8,6 +8,18 @@ function isValidEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 }
 
+function isValidPhone(v: string) {
+  const digits = v.replace(/\D/g, '')
+  return digits.length === 10 || (digits.length === 11 && digits[0] === '1')
+}
+
+function formatPhone(raw: string) {
+  const digits = raw.replace(/\D/g, '').slice(0, 10)
+  if (digits.length < 4)  return digits
+  if (digits.length < 7)  return `(${digits.slice(0, 3)}) ${digits.slice(3)}`
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
+}
+
 type Field = 'name' | 'phone' | 'email'
 
 export default function Contact() {
@@ -22,6 +34,7 @@ export default function Contact() {
     const e: Partial<Record<Field, string>> = {}
     if (!name.trim())         e.name  = 'Name is required'
     if (!phone.trim())        e.phone = 'Phone is required'
+    else if (!isValidPhone(phone)) e.phone = 'Enter a valid 10-digit phone number'
     if (!email.trim())        e.email = 'Email is required'
     else if (!isValidEmail(email)) e.email = 'Enter a valid email address'
     return e
@@ -107,7 +120,7 @@ export default function Contact() {
               <input value={name} onChange={e => setName(e.target.value)} type="text" autoComplete="name" className={input(!!errors.name)} placeholder="Jane Smith" />
             </Field>
             <Field label="Phone *" error={errors.phone}>
-              <input value={phone} onChange={e => setPhone(e.target.value)} type="tel" autoComplete="tel" className={input(!!errors.phone)} placeholder="(386) 555-0100" />
+              <input value={phone} onChange={e => setPhone(formatPhone(e.target.value))} type="tel" autoComplete="tel" className={input(!!errors.phone)} placeholder="(386) 555-0100" />
             </Field>
           </div>
           <Field label="Email *" error={errors.email} className="mb-4">
