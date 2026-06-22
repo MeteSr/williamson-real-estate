@@ -32,6 +32,4 @@ This repo contains **two separate frontends**. Always edit `src/`, never `fronte
 
 ## Market data
 
-Stats in `MarketSnapshot.tsx` are manually maintained. When updating:
-- Source: Redfin neighborhood page for Pelican Bay, Daytona Beach FL 32119
-- Current stats (June 2026): 34 active listings, $280K median sale (-3% YoY), $309K median list, 113 avg DOM
+All stats live in `src/lib/marketData.ts` — the single source of truth. Changing values there automatically updates both the MarketSnapshot section and the Hero calculator default. Source: Redfin neighborhood page for Pelican Bay, Daytona Beach FL 32119.
