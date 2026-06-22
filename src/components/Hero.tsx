@@ -12,7 +12,7 @@ function fmt(n: number) {
 }
 
 export default function Hero() {
-  const [price, setPrice]       = useState(400000)
+  const [price, setPrice]       = useState(300000)
   const [buyToggle, setBuyToggle] = useState(false)
 
   const traditional = price * TRADITIONAL
