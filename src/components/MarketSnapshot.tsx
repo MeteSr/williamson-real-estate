@@ -2,10 +2,10 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  { label: 'Median Sale Price', value: '$280K' },
-  { label: 'Avg Days on Market', value: '78' },
-  { label: 'Homes Sold', value: '7' },
-  { label: 'Sale-to-List Ratio', value: '95.5%' },
+  { label: 'Active Listings', value: '34' },
+  { label: 'Median Sale Price', value: '$280K', note: '▼ 3% YoY' },
+  { label: 'Median List Price', value: '$309K' },
+  { label: 'Avg Days on Market', value: '113' },
 ]
 
 export default function MarketSnapshot() {
@@ -18,7 +18,7 @@ export default function MarketSnapshot() {
             <div>
               <p className="text-teal text-xs font-semibold tracking-widest uppercase mb-2">Market Data</p>
               <h2 className="text-3xl font-extrabold text-navy">Pelican Bay Market Snapshot</h2>
-              <p className="text-gray-400 text-sm mt-1">Update for May 2026</p>
+              <p className="text-gray-400 text-sm mt-1">Updated June 2026 · Source: Redfin</p>
             </div>
             <a href="#contact" className="text-teal text-sm font-semibold hover:underline hidden sm:block">View Full Report →</a>
           </div>
@@ -35,6 +35,7 @@ export default function MarketSnapshot() {
               >
                 <p className="text-gray-400 text-xs mb-2">{s.label}</p>
                 <p className="text-3xl font-extrabold text-navy mb-1">{s.value}</p>
+                {s.note && <p className="text-xs font-semibold text-red-500">{s.note}</p>}
               </motion.div>
             ))}
           </div>

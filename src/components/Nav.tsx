@@ -61,11 +61,13 @@ export default function Nav() {
 
         {/* Mobile burger */}
         <button
-          className="lg:hidden p-2"
+          className="lg:hidden p-2 flex flex-col gap-1.5"
           aria-label="Toggle menu"
           onClick={() => setOpen(o => !o)}
         >
-          <span className="font-extrabold text-2xl leading-none text-[#BF5700]" style={{ fontFamily: 'Georgia, serif', letterSpacing: '-0.02em' }}>W</span>
+          <span className={`block w-6 h-0.5 transition-colors ${open ? 'bg-navy' : scrolled ? 'bg-gray-700' : 'bg-white'}`} />
+          <span className={`block w-6 h-0.5 transition-colors ${open ? 'bg-navy' : scrolled ? 'bg-gray-700' : 'bg-white'}`} />
+          <span className={`block w-6 h-0.5 transition-colors ${open ? 'bg-navy' : scrolled ? 'bg-gray-700' : 'bg-white'}`} />
         </button>
       </div>
 
