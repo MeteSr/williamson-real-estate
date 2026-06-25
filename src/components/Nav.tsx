@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const links = ['Sell', 'HomeGentic']
+const links = ['Sell']
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)

@@ -1,7 +1,6 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import WhyWilliamson from '@/components/WhyWilliamson'
-import HomeGentic from '@/components/HomeGentic'
 import MarketSnapshot from '@/components/MarketSnapshot'
 import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
@@ -16,7 +15,6 @@ export default function Home() {
       <main>
         <Hero />
         <WhyWilliamson />
-        <HomeGentic />
         <MarketSnapshot />
         <Testimonials />
         <Contact />
